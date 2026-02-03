@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alejandro Matesa – Portfolio</title>
   <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
   <!-- Controles superiores: idioma y tema -->
@@ -23,10 +25,15 @@
 
   <!-- HERO -->
   <section id="hero">
-    <h1 data-i18n="name"></h1>
-    <p data-i18n="heroSubtitle"></p>
-    <a href="#projects" class="btn" data-i18n="viewProjects"></a>
+    <h1 data-i18n="name" data-aos="fade-up"></h1>
+    <p data-i18n="heroSubtitle" data-aos="fade-up" data-aos-delay="100"></p>
+    <a href="#projects"
+       class="btn"
+       data-i18n="viewProjects"
+       data-aos="fade-up"
+       data-aos-delay="200"></a>
   </section>
+
 
   <!-- PROJECTS -->
   <section id="projects">
@@ -35,7 +42,7 @@
 
     <div class="projects-grid">
       <!-- Proyecto TFI -->
-      <article class="project-card">
+      <article class="project-card" data-aos="fade-up">
         <h3 data-i18n="proj1Title"></h3>
         <p class="project-tag" data-i18n="proj1Tag"></p>
         <p class="project-desc" data-i18n="proj1Desc"></p>
@@ -48,7 +55,7 @@
       </article>
 
       <!-- Proyecto MedComp -->
-      <article class="project-card">
+      <article class="project-card" data-aos="fade-up">
         <h3 data-i18n="proj2Title"></h3>
         <p class="project-tag" data-i18n="proj2Tag"></p>
         <p class="project-desc" data-i18n="proj2Desc"></p>
@@ -61,7 +68,7 @@
       </article>
 
       <!-- Template estrella (placeholder) -->
-      <article class="project-card">
+      <article class="project-card" data-aos="fade-up">
         <h3 data-i18n="proj3Title"></h3>
         <p class="project-tag" data-i18n="proj3Tag"></p>
         <p class="project-desc" data-i18n="proj3Desc"></p>
@@ -87,7 +94,9 @@
       <a href="mailto:alejandromatesa@gmail.com">Email</a>
     </p>
   </section>
-
+  
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
+ 
 </body>
 </html>
