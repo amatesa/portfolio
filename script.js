@@ -8,30 +8,43 @@ document.addEventListener("DOMContentLoaded", () => {
       projectsTitle: "Proyectos seleccionados",
       projectsIntro:
         "Una combinación de trabajo real con clientes, proyectos académicos y templates diseñados para mostrar estructura, claridad y experiencia de usuario.",
-
+    
       proj1Title: "Sistema de Gestión de Inventario",
       proj1Tag: "Python · SQLite · CLI",
       proj1Desc:
         "Proyecto académico: herramienta de consola para gestionar inventario, con operaciones CRUD y reporte de productos con poco stock.",
       proj1LinkText: "Ver en GitHub",
-
+    
       proj2Title: "Sitio Corporativo MedComp",
       proj2Tag: "HTML · CSS · JS · PHP",
       proj2Desc:
         "Proyecto real para un cliente (2019): sitio corporativo multipágina para una empresa de consultoría médica.",
       proj2LinkText: "Ver repositorio",
-
+    
       proj3Title: "Template de Landing Profesional",
       proj3Tag: "HTML · CSS · JS · Diseño moderno",
       proj3Desc:
         "Próximamente: template moderno y responsive para profesionales independientes.",
       proj3LinkText: "Demo en construcción",
-
+    
+      // 📌 NUEVO: sección productos digitales
+      productsTitle: "Productos digitales y recursos",
+      productsIntro:
+        "Espacio para ebooks, guías y recursos descargables orientados a datos, productividad y proyectos digitales. Algunos serán gratuitos y otros de pago.",
+    
+      ebook1Title: "Ebook #1 – En desarrollo",
+      ebook1Tag: "Ebook · PDF",
+      ebook1Desc:
+        "Placeholder para el primer ebook. Cuando esté listo, este bloque mostrará la temática, a quién ayuda y qué incluye.",
+      ebook1LinkText: "Más información próximamente",
+    
       aboutTitle: "Sobre mí",
       aboutBody:
-        "Trabajo en la intersección entre datos, operaciones y proyectos digitales.",
+        "Trabajo en la intersección entre datos, operaciones y proyectos digitales. Me interesa conectar análisis, automatización y diseño de experiencias sencillas, tanto en entornos fintech como en proyectos freelance y educativos.",
+    
       contactTitle: "Contacto"
     },
+
     en: {
       name: "Alejandro Matesa",
       heroSubtitle: "Data & Operations Analyst · Web & Digital Projects",
@@ -39,30 +52,43 @@ document.addEventListener("DOMContentLoaded", () => {
       projectsTitle: "Selected Projects",
       projectsIntro:
         "A mix of real client work, academic projects and templates designed to show structure, clarity and user experience.",
-
+    
       proj1Title: "Inventory Management System",
       proj1Tag: "Python · SQLite · CLI",
       proj1Desc:
         "Academic project: a console-based inventory management tool with CRUD operations and low-stock reporting.",
       proj1LinkText: "View on GitHub",
-
+    
       proj2Title: "MedComp Corporate Website",
       proj2Tag: "HTML · CSS · JS · PHP",
       proj2Desc:
         "Real-world client project (2019): multi-page corporate website for a medical consulting company.",
       proj2LinkText: "View repository",
-
+    
       proj3Title: "Professional Landing Template",
       proj3Tag: "HTML · CSS · JS · Modern layout",
       proj3Desc:
         "Coming soon: a modern, responsive template for independent professionals.",
       proj3LinkText: "Live demo coming soon",
-
+    
+      // 📌 NEW: digital products section
+      productsTitle: "Digital products & resources",
+      productsIntro:
+        "A space for ebooks, guides and downloadable resources focused on data, productivity and digital projects. Some will be free and others paid.",
+    
+      ebook1Title: "Ebook #1 – In progress",
+      ebook1Tag: "Ebook · PDF",
+      ebook1Desc:
+        "Placeholder for the first ebook. Once it is ready, this block will explain the topic, who it helps and what it includes.",
+      ebook1LinkText: "More details coming soon",
+    
       aboutTitle: "About",
       aboutBody:
-        "I work at the intersection of data, operations and digital projects.",
+        "I work at the intersection of data, operations and digital projects. I enjoy connecting analysis, automation and simple user experiences, both in fintech environments and freelance/educational projects.",
+    
       contactTitle: "Contact"
     }
+
   };
 
   let currentLang = "en";
