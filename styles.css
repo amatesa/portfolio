@@ -71,11 +71,11 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 24px;
 }
 
 #hero h1 {
-  font-size: 3rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 #hero p {
