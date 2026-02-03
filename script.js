@@ -102,4 +102,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("dark", isDark);
     themeBtn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
   });
+  
+  AOS.init({
+  duration: 800,
+  easing: "ease-out-cubic",
+  once: true
 });
