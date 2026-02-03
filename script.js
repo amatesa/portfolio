@@ -107,4 +107,5 @@ document.addEventListener("DOMContentLoaded", () => {
   duration: 800,
   easing: "ease-out-cubic",
   once: true
+  });
 });
