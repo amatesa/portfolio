@@ -176,6 +176,11 @@ h2 {
   border-bottom-color: currentColor;
 }
 
+#products {
+  border-top: 1px solid var(--border-color);
+  padding-top: 60px;
+}
+
 /* Responsive */
 
 @media (max-width: 600px) {
