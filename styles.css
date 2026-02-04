@@ -154,6 +154,19 @@ h2 {
   opacity: 0.5;
   border-bottom: none;
 }
+.project-thumb {
+  margin-bottom: 1.25rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.project-thumb img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
 
 /* About & Contact */
 
