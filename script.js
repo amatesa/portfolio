@@ -21,11 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "Proyecto real para un cliente (2019): sitio corporativo multipágina para una empresa de consultoría médica.",
       proj2LinkText: "Ver repositorio",
     
-      proj3Title: "Template de Landing Profesional",
-      proj3Tag: "HTML · CSS · JS · Diseño moderno",
+      proj3Title: "Northbridge – Executive Coaching Landing",
+      proj3Tag: "Landing page · HTML · CSS · JS",
       proj3Desc:
-        "Próximamente: template moderno y responsive para profesionales independientes.",
-      proj3LinkText: "Demo en construcción",
+        "Template de landing premium para coaches ejecutivos: hero con fotografía, logos de confianza, servicios, proceso y CTA final.",
+      proj3LinkText: "Ver landing / código",
+
     
       // 📌 NUEVO: sección productos digitales
       productsTitle: "Productos digitales y recursos",
@@ -65,11 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "Real-world client project (2019): multi-page corporate website for a medical consulting company.",
       proj2LinkText: "View repository",
     
-      proj3Title: "Professional Landing Template",
-      proj3Tag: "HTML · CSS · JS · Modern layout",
+      proj3Title: "Northbridge – Executive Coaching Landing",
+      proj3Tag: "Landing page · HTML · CSS · JS",
       proj3Desc:
-        "Coming soon: a modern, responsive template for independent professionals.",
-      proj3LinkText: "Live demo coming soon",
+        "Premium landing template for executive coaching: photo hero, trusted-by logos, services, process and final CTA.",
+      proj3LinkText: "View landing / code",
+
     
       // 📌 NEW: digital products section
       productsTitle: "Digital products & resources",
