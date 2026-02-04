@@ -19,13 +19,13 @@ document.addEventListener("DOMContentLoaded", () => {
       proj2Tag: "HTML · CSS · JS · PHP",
       proj2Desc:
         "Proyecto real para un cliente (2019): sitio corporativo multipágina para una empresa de consultoría médica.",
-      proj2LinkText: "Ver repositorio",
+      proj2LinkText: "Ver sitio web",
     
       proj3Title: "Northbridge – Executive Coaching Landing",
       proj3Tag: "Landing page · HTML · CSS · JS",
       proj3Desc:
         "Template de landing premium para coaches ejecutivos: hero con fotografía, logos de confianza, servicios, proceso y CTA final.",
-      proj3LinkText: "Ver landing / código",
+      proj3LinkText: "Ver landing",
 
     
       // 📌 NUEVO: sección productos digitales
@@ -64,13 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
       proj2Tag: "HTML · CSS · JS · PHP",
       proj2Desc:
         "Real-world client project (2019): multi-page corporate website for a medical consulting company.",
-      proj2LinkText: "View repository",
+      proj2LinkText: "View website",
     
       proj3Title: "Northbridge – Executive Coaching Landing",
       proj3Tag: "Landing page · HTML · CSS · JS",
       proj3Desc:
         "Premium landing template for executive coaching: photo hero, trusted-by logos, services, process and final CTA.",
-      proj3LinkText: "View landing / code",
+      proj3LinkText: "View landing",
 
     
       // 📌 NEW: digital products section
