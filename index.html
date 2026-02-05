@@ -28,10 +28,10 @@
           class="theme-toggle"
           id="themeToggle"
           type="button"
-          aria-label="Toggle dark mode"
+          aria-label="Toggle theme"
         >
-          <span class="theme-toggle-icon" aria-hidden="true">🌙</span>
-          <span class="theme-toggle-label">Dark</span>
+          <span class="theme-toggle-icon" aria-hidden="true"></span>
+          <span class="theme-toggle-label">Light</span>
         </button>
       </div>
 
@@ -81,8 +81,12 @@
           <div class="hero-inner">
             <div class="hero-copy">
               <p class="hero-kicker" data-i18n="heroKicker"></p>
-              <h1 class="hero-title">Alejandro Matesa</h1>
+              <h1 class="hero-title">
+                Alejandro
+                <span class="hero-title-highlight">Matesa</span>
+              </h1>
               <p class="hero-subtitle" data-i18n="heroSubtitle"></p>
+              <p class="hero-focus" data-i18n="heroFocus"></p>
 
               <div class="hero-actions">
                 <a
@@ -92,37 +96,56 @@
                 ></a>
                 <a
                   href="#contact"
-                  class="btn btn-outline"
+                  class="btn btn-secondary"
                   data-i18n="heroCtaContact"
                 ></a>
               </div>
-
-              <p class="hero-focus" data-i18n="heroFocus"></p>
             </div>
 
-            <!-- Visual: placeholder card for future hero image -->
-            <div class="hero-media" aria-hidden="true">
-              <div class="hero-media-card">
-                <div class="hero-media-figure"></div>
+            <aside class="hero-media" aria-hidden="true">
+              <div class="hero-media-shell">
+                <div class="hero-pill hero-pill-primary">
+                  <span class="hero-pill-label" data-i18n="heroPillRole"></span>
+                  <span class="hero-pill-meta" data-i18n="heroPillMeta"></span>
+                </div>
+
+                <div class="hero-media-card">
+                  <div class="hero-media-figure"></div>
+                </div>
+
+                <div class="hero-pill hero-pill-secondary">
+                  <div class="hero-pill-meta-item">
+                    <span class="hero-pill-meta-label" data-i18n="heroPill1Label"
+                    ></span>
+                    <span class="hero-pill-meta-value" data-i18n="heroPill1Value"
+                    ></span>
+                  </div>
+                  <div class="hero-pill-meta-item">
+                    <span class="hero-pill-meta-label" data-i18n="heroPill2Label"
+                    ></span>
+                    <span class="hero-pill-meta-value" data-i18n="heroPill2Value"
+                    ></span>
+                  </div>
+                </div>
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
 
       <!-- PROJECTS -->
-      <section id="projects" class="section">
+      <section id="projects" class="section section-projects">
         <div class="shell">
           <header class="section-header">
-            <h2 data-i18n="projectsTitle"></h2>
+            <div>
+              <p class="section-kicker" data-i18n="projectsKicker"></p>
+              <h2 class="section-title" data-i18n="projectsTitle"></h2>
+            </div>
             <p class="section-intro" data-i18n="projectsIntro"></p>
           </header>
 
           <!-- Filter pills -->
-          <div
-            class="projects-filter"
-            aria-label="Filter projects by category"
-          >
+          <div class="projects-filter" role="tablist">
             <button
               class="pill is-active"
               type="button"
@@ -155,122 +178,233 @@
             ></button>
           </div>
 
+          <!-- Grid -->
           <div class="projects-grid">
-            <!-- Proyecto TFI · category: dev -->
-            <article class="project-card" data-category="dev">
-              <figure class="project-thumb">
+            <!-- Project 1: Data & dashboards -->
+            <article
+              class="project-card"
+              data-category="data"
+            >
+              <div class="project-thumb">
                 <img
-                  src="assets/images/projects/thumb-tfi.webp"
-                  alt="Inventory Management System – preview"
+                  src="assets/images/projects/project-data.webp"
+                  alt="Dashboard view with graphs and filters"
                   loading="lazy"
                 />
-              </figure>
-              <div class="project-body">
-                <h3 data-i18n="proj1Title"></h3>
-                <p class="project-tag" data-i18n="proj1Tag"></p>
-                <p class="project-desc" data-i18n="proj1Desc"></p>
               </div>
-              <div class="project-actions">
-                <a
-                  href="https://github.com/amatesa/TFI"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-secondary"
-                  data-i18n="proj1RepoLabel"
-                ></a>
+              <div class="project-body">
+                <header class="project-header">
+                  <p class="project-tag" data-i18n="proj1Tag"></p>
+                  <h3 class="project-title" data-i18n="proj1Title"></h3>
+                </header>
+                <p class="project-description" data-i18n="proj1Desc"></p>
+                <div class="project-meta">
+                  <span class="project-meta-label" data-i18n="proj1Meta"></span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj1DemoLabel"
+                  ></a>
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj1RepoLabel"
+                  ></a>
+                </div>
               </div>
             </article>
 
-            <!-- Proyecto MedComp · category: web / templates -->
-            <article class="project-card" data-category="web templates">
-              <figure class="project-thumb">
+            <!-- Project 2: Web template / MedComp -->
+            <article
+              class="project-card"
+              data-category="web dev"
+            >
+              <div class="project-thumb">
                 <img
                   src="assets/images/projects/thumb-medcomp.webp"
-                  alt="MedComp website – preview"
+                  alt="Landing page template for a medical web platform"
                   loading="lazy"
                 />
-              </figure>
-              <div class="project-body">
-                <h3 data-i18n="proj2Title"></h3>
-                <p class="project-tag" data-i18n="proj2Tag"></p>
-                <p class="project-desc" data-i18n="proj2Desc"></p>
               </div>
-              <div class="project-actions">
-                <a
-                  href="https://amatesa.github.io/medcomp/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-primary"
-                  data-i18n="proj2DemoLabel"
-                ></a>
-                <a
-                  href="https://github.com/amatesa/medcomp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-secondary"
-                  data-i18n="proj2RepoLabel"
-                ></a>
+              <div class="project-body">
+                <header class="project-header">
+                  <p class="project-tag" data-i18n="proj2Tag"></p>
+                  <h3 class="project-title" data-i18n="proj2Title"></h3>
+                </header>
+                <p class="project-description" data-i18n="proj2Desc"></p>
+                <div class="project-meta">
+                  <span class="project-meta-label" data-i18n="proj2Meta"></span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj2DemoLabel"
+                  ></a>
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj2RepoLabel"
+                  ></a>
+                </div>
               </div>
             </article>
 
-            <!-- Proyecto Northbridge · category: web / templates -->
-            <article class="project-card" data-category="web templates">
-              <figure class="project-thumb">
+            <!-- Project 3: Template Estrella / Northbridge -->
+            <article
+              class="project-card"
+              data-category="web templates"
+            >
+              <div class="project-thumb">
                 <img
                   src="assets/images/projects/thumb-northbridge.webp"
-                  alt="Northbridge – Executive Coaching landing – preview"
+                  alt="Executive coaching landing page template"
                   loading="lazy"
                 />
-              </figure>
-              <div class="project-body">
-                <h3 data-i18n="proj3Title"></h3>
-                <p class="project-tag" data-i18n="proj3Tag"></p>
-                <p class="project-desc" data-i18n="proj3Desc"></p>
               </div>
-              <div class="project-actions">
-                <a
-                  href="https://amatesa.github.io/landing-professional-template/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-primary"
-                  data-i18n="proj3DemoLabel"
-                ></a>
-                <a
-                  href="https://github.com/amatesa/landing-professional-template"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-secondary"
-                  data-i18n="proj3RepoLabel"
-                ></a>
+              <div class="project-body">
+                <header class="project-header">
+                  <p class="project-tag" data-i18n="proj3Tag"></p>
+                  <h3 class="project-title" data-i18n="proj3Title"></h3>
+                </header>
+                <p class="project-description" data-i18n="proj3Desc"></p>
+                <div class="project-meta">
+                  <span class="project-meta-label" data-i18n="proj3Meta"></span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj3DemoLabel"
+                  ></a>
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj3RepoLabel"
+                  ></a>
+                </div>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
 
-      <!-- DIGITAL PRODUCTS (EBOOKS / TEMPLATES) -->
-      <section id="products" class="section is-hidden">
-        <div class="shell">
-          <header class="section-header">
-            <h2 data-i18n="productsTitle"></h2>
-            <p class="section-intro" data-i18n="productsIntro"></p>
-          </header>
-
-          <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-body">
-                <h3 data-i18n="ebook1Title"></h3>
-                <p class="project-tag" data-i18n="ebook1Tag"></p>
-                <p class="project-desc" data-i18n="ebook1Desc"></p>
+            <!-- Project 4: Game dev -->
+            <article
+              class="project-card"
+              data-category="dev"
+            >
+              <div class="project-thumb">
+                <img
+                  src="assets/images/projects/project-gamedev.webp"
+                  alt="2D game concept art and level mockups"
+                  loading="lazy"
+                />
               </div>
-              <div class="project-actions">
-                <a
-                  href="#"
-                  class="btn btn-secondary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  data-i18n="ebook1LinkText"
-                ></a>
+              <div class="project-body">
+                <header class="project-header">
+                  <p class="project-tag" data-i18n="proj4Tag"></p>
+                  <h3 class="project-title" data-i18n="proj4Title"></h3>
+                </header>
+                <p class="project-description" data-i18n="proj4Desc"></p>
+                <div class="project-meta">
+                  <span class="project-meta-label" data-i18n="proj4Meta"></span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj4DemoLabel"
+                  ></a>
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj4RepoLabel"
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 5: Web project (TFI) -->
+            <article
+              class="project-card"
+              data-category="web dev"
+            >
+              <div class="project-thumb">
+                <img
+                  src="assets/images/projects/thumb-tfi.webp"
+                  alt="Dashboard-like layout for a medical follow-up app"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <header class="project-header">
+                  <p class="project-tag" data-i18n="proj5Tag"></p>
+                  <h3 class="project-title" data-i18n="proj5Title"></h3>
+                </header>
+                <p class="project-description" data-i18n="proj5Desc"></p>
+                <div class="project-meta">
+                  <span class="project-meta-label" data-i18n="proj5Meta"></span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj5DemoLabel"
+                  ></a>
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj5RepoLabel"
+                  ></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Project 6: Placeholder for future templates -->
+            <article
+              class="project-card"
+              data-category="templates"
+            >
+              <div class="project-thumb">
+                <img
+                  src="assets/images/projects/project-products.webp"
+                  alt="Mockup of digital products and templates"
+                  loading="lazy"
+                />
+              </div>
+              <div class="project-body">
+                <header class="project-header">
+                  <p class="project-tag" data-i18n="proj6Tag"></p>
+                  <h3 class="project-title" data-i18n="proj6Title"></h3>
+                </header>
+                <p class="project-description" data-i18n="proj6Desc"></p>
+                <div class="project-meta">
+                  <span class="project-meta-label" data-i18n="proj6Meta"></span>
+                </div>
+                <div class="project-links">
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj6DemoLabel"
+                  ></a>
+                  <a
+                    href="#"
+                    class="project-link"
+                    aria-disabled="true"
+                    data-i18n="proj6RepoLabel"
+                  ></a>
+                </div>
               </div>
             </article>
           </div>
@@ -278,125 +412,188 @@
       </section>
 
       <!-- RESOURCES -->
-      <section id="resources" class="section">
+      <section id="resources" class="section section-resources">
         <div class="shell">
           <header class="section-header">
-            <h2 data-i18n="resourcesTitle"></h2>
+            <div>
+              <p class="section-kicker" data-i18n="resourcesKicker"></p>
+              <h2 class="section-title" data-i18n="resourcesTitle"></h2>
+            </div>
             <p class="section-intro" data-i18n="resourcesIntro"></p>
           </header>
 
           <div class="resources-grid">
             <article class="resource-card">
-              <h3 data-i18n="resource1Title"></h3>
-              <p class="resource-tag" data-i18n="resource1Tag"></p>
-              <p class="resource-desc" data-i18n="resource1Desc"></p>
-              <a
-                href="https://github.com/amatesa"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="resource-link"
-                data-i18n="resource1LinkText"
-              ></a>
+              <header class="resource-header">
+                <h3 class="resource-title" data-i18n="resource1Title"></h3>
+              </header>
+              <p class="resource-description" data-i18n="resource1Desc"></p>
+              <ul class="resource-list">
+                <li data-i18n="resource1Item1"></li>
+                <li data-i18n="resource1Item2"></li>
+                <li data-i18n="resource1Item3"></li>
+              </ul>
             </article>
 
             <article class="resource-card">
-              <h3 data-i18n="resource2Title"></h3>
-              <p class="resource-tag" data-i18n="resource2Tag"></p>
-              <p class="resource-desc" data-i18n="resource2Desc"></p>
-              <a
-                href="https://www.linkedin.com/in/alejandromatesa/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="resource-link"
-                data-i18n="resource2LinkText"
-              ></a>
+              <header class="resource-header">
+                <h3 class="resource-title" data-i18n="resource2Title"></h3>
+              </header>
+              <p class="resource-description" data-i18n="resource2Desc"></p>
+              <ul class="resource-list">
+                <li data-i18n="resource2Item1"></li>
+                <li data-i18n="resource2Item2"></li>
+                <li data-i18n="resource2Item3"></li>
+              </ul>
+            </article>
+
+            <article class="resource-card">
+              <header class="resource-header">
+                <h3 class="resource-title" data-i18n="resource3Title"></h3>
+              </header>
+              <p class="resource-description" data-i18n="resource3Desc"></p>
+              <ul class="resource-list">
+                <li data-i18n="resource3Item1"></li>
+                <li data-i18n="resource3Item2"></li>
+                <li data-i18n="resource3Item3"></li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="section section-products">
+        <div class="shell">
+          <header class="section-header">
+            <div>
+              <p class="section-kicker" data-i18n="productsKicker"></p>
+              <h2 class="section-title" data-i18n="productsTitle"></h2>
+            </div>
+            <p class="section-intro" data-i18n="productsIntro"></p>
+          </header>
+
+          <div class="products-grid">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img
+                  src="assets/images/products/product-placeholder.webp"
+                  alt="Open book and Kindle device mockup"
+                  loading="lazy"
+                />
+              </div>
+              <div class="product-body">
+                <p class="product-tag" data-i18n="ebook1Tag"></p>
+                <h3 class="product-title" data-i18n="ebook1Title"></h3>
+                <p class="product-description" data-i18n="ebook1Desc"></p>
+                <p class="product-meta" data-i18n="ebook1Meta"></p>
+              </div>
+            </article>
+
+            <article class="product-card">
+              <div class="product-body">
+                <p class="product-tag" data-i18n="template1Tag"></p>
+                <h3 class="product-title" data-i18n="template1Title"></h3>
+                <p class="product-description" data-i18n="template1Desc"></p>
+                <p class="product-meta" data-i18n="template1Meta"></p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
       <!-- ABOUT -->
-      <section id="about" class="section section-muted">
+      <section id="about" class="section section-about">
         <div class="shell">
           <header class="section-header">
-            <h2 data-i18n="aboutTitle"></h2>
+            <div>
+              <p class="section-kicker" data-i18n="aboutKicker"></p>
+              <h2 class="section-title" data-i18n="aboutTitle"></h2>
+            </div>
             <p class="section-intro" data-i18n="aboutIntro"></p>
           </header>
 
-          <div class="about-layout">
-            <!-- Visual / profile placeholder -->
-            <aside class="about-card" aria-hidden="true">
-              <div class="about-media">
-                <div class="about-media-circle"></div>
-              </div>
-              <p class="about-highlight" data-i18n="aboutHighlight"></p>
-            </aside>
+          <div class="about-columns">
+            <div class="about-column">
+              <h3 class="about-subtitle" data-i18n="aboutCol1Title"></h3>
+              <p class="about-text" data-i18n="aboutCol1Text1"></p>
+              <p class="about-text" data-i18n="aboutCol1Text2"></p>
+              <p class="about-text" data-i18n="aboutCol1Text3"></p>
+            </div>
 
-            <div class="about-columns">
-              <div class="about-column">
-                <h3 data-i18n="aboutCol1Title"></h3>
-                <p data-i18n="aboutCol1Text"></p>
-              </div>
-              <div class="about-column">
-                <h3 data-i18n="aboutCol2Title"></h3>
-                <p data-i18n="aboutCol2Text"></p>
-              </div>
-              <div class="about-column">
-                <h3 data-i18n="aboutCol3Title"></h3>
-                <p data-i18n="aboutCol3Text"></p>
-              </div>
+            <div class="about-column">
+              <h3 class="about-subtitle" data-i18n="aboutCol2Title"></h3>
+              <ul class="about-list">
+                <li data-i18n="aboutCol2Item1"></li>
+                <li data-i18n="aboutCol2Item2"></li>
+                <li data-i18n="aboutCol2Item3"></li>
+                <li data-i18n="aboutCol2Item4"></li>
+              </ul>
+            </div>
+
+            <div class="about-column">
+              <h3 class="about-subtitle" data-i18n="aboutCol3Title"></h3>
+              <ul class="about-list">
+                <li data-i18n="aboutCol3Item1"></li>
+                <li data-i18n="aboutCol3Item2"></li>
+                <li data-i18n="aboutCol3Item3"></li>
+                <li data-i18n="aboutCol3Item4"></li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
       <!-- CONTACT -->
-      <section id="contact" class="section">
+      <section id="contact" class="section section-contact">
         <div class="shell">
           <header class="section-header">
-            <h2 data-i18n="contactTitle"></h2>
+            <div>
+              <p class="section-kicker" data-i18n="contactKicker"></p>
+              <h2 class="section-title" data-i18n="contactTitle"></h2>
+            </div>
             <p class="section-intro" data-i18n="contactIntro"></p>
           </header>
 
-          <div class="contact-grid">
-            <article class="contact-card">
-              <h3 data-i18n="contactWorkTitle"></h3>
-              <p data-i18n="contactWorkText"></p>
-              <div class="contact-actions">
-                <a
-                  href="mailto:alejandromatesa@gmail.com"
-                  class="btn btn-primary"
-                  data-i18n="contactWorkEmail"
-                ></a>
-                <a
-                  href="https://www.linkedin.com/in/alejandromatesa/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="btn btn-secondary"
-                  data-i18n="contactWorkLinkedIn"
-                ></a>
-              </div>
-            </article>
+          <div class="contact-layout">
+            <div class="contact-block">
+              <h3 class="contact-subtitle" data-i18n="contactSubTitle"></h3>
+              <p class="contact-text" data-i18n="contactText1"></p>
+              <p class="contact-text" data-i18n="contactText2"></p>
 
-            <article class="contact-card">
-              <h3 data-i18n="contactExploreTitle"></h3>
-              <p data-i18n="contactExploreText"></p>
-              <div class="contact-actions">
+              <div class="contact-links">
                 <a
-                  href="#projects"
-                  class="btn btn-outline"
-                  data-i18n="contactExploreProjects"
+                  href="mailto:amatesa.dev@gmail.com"
+                  class="contact-link"
+                  data-i18n="contactEmailLabel"
+                ></a>
+                <a
+                  href="https://github.com/amatesa"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="contact-link"
+                  data-i18n="contactGithubLabel"
+                ></a>
+                <a
+                  href="#"
+                  class="contact-link"
+                  aria-disabled="true"
+                  data-i18n="contactLinkedinLabel"
                 ></a>
               </div>
-            </article>
+            </div>
+
+            <div class="contact-block contact-note">
+              <p class="contact-note-text" data-i18n="contactNote"></p>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="shell">
-        <p data-i18n="footerText"></p>
+      <div class="shell footer-inner">
+        <p class="footer-text" data-i18n="footerText"></p>
       </div>
     </footer>
   </body>
