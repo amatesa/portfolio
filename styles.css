@@ -26,7 +26,21 @@
   --gap-section: 4.5rem;
 }
 
-/* Optional dark preference support, without romper nada si el usuario no lo usa */
+/* Dark theme override via class (manual toggle) */
+body.theme-dark {
+  --color-bg: #050816;
+  --color-bg-alt: #070a1b;
+  --color-surface: #0b1024;
+  --color-border-subtle: #202448;
+  --color-text: #f9fafb;
+  --color-text-muted: #b4b5d0;
+  --color-accent: #8b9dff;
+  --color-accent-soft: rgba(139, 157, 255, 0.14);
+  --color-pill-bg: rgba(139, 157, 255, 0.2);
+  --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Optional: respect system preference if user nunca tocó el toggle */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg: #050816;
@@ -207,6 +221,73 @@ ul {
   background-color: rgba(255, 255, 255, 0.06);
 }
 
+/* Small chip-style toggles (idioma) */
+.chip-toggle {
+  border-radius: 999px;
+  border: 1px solid var(--color-border-subtle);
+  background-color: transparent;
+  padding: 0.2rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
+}
+
+.chip-toggle.is-active {
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Icon buttons (social, theme, project actions) */
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-subtle);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 0.12s ease, transform 0.12s ease,
+    box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.icon-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-text-muted);
+}
+
+.icon-btn:hover {
+  background-color: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+}
+
+.icon-btn-soft {
+  background-color: rgba(15, 23, 42, 0.75);
+  border-color: transparent;
+}
+
+.icon-btn-soft svg {
+  fill: #ffffff;
+}
+
+.icon-btn-soft:hover {
+  background-color: rgba(15, 23, 42, 0.9);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* Theme toggle */
+.theme-toggle {
+  font-size: 0.9rem;
+}
+
 /* ---------------------------
    Header & nav
 --------------------------- */
@@ -220,11 +301,9 @@ ul {
   border-bottom: 1px solid rgba(224, 224, 236, 0.65);
 }
 
-@media (prefers-color-scheme: dark) {
-  .site-header {
-    background-color: rgba(5, 8, 22, 0.9);
-    border-bottom-color: rgba(32, 36, 72, 0.9);
-  }
+body.theme-dark .site-header {
+  background-color: rgba(7, 10, 27, 0.94);
+  border-bottom-color: rgba(32, 36, 72, 0.9);
 }
 
 .header-inner {
@@ -300,6 +379,35 @@ ul {
   width: 60%;
 }
 
+/* Right side actions (idioma, theme, social) */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-control-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.2rem;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(224, 224, 236, 0.8);
+}
+
+body.theme-dark .nav-control-group {
+  background-color: rgba(10, 12, 32, 0.9);
+  border-color: rgba(32, 36, 72, 0.9);
+}
+
+.nav-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 /* Burger button */
 
 .nav-toggle {
@@ -343,8 +451,15 @@ ul {
 
 .hero {
   padding: 4.5rem 0 4rem;
-  background: radial-gradient(circle at top left, rgba(75, 107, 251, 0.14), transparent 55%),
+  background:
+    radial-gradient(circle at top left, rgba(75, 107, 251, 0.14), transparent 55%),
     radial-gradient(circle at bottom right, rgba(34, 197, 94, 0.12), transparent 55%);
+}
+
+body.theme-dark .hero {
+  background:
+    radial-gradient(circle at top left, rgba(139, 157, 255, 0.18), transparent 55%),
+    radial-gradient(circle at bottom right, rgba(16, 185, 129, 0.18), transparent 55%);
 }
 
 .hero-inner {
@@ -435,7 +550,7 @@ ul {
 }
 
 /* ---------------------------
-   Cards & projects
+   Cards & about list
 --------------------------- */
 
 .card {
@@ -466,12 +581,57 @@ ul {
   color: var(--color-text-muted);
 }
 
+.about-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+/* ---------------------------
+   Projects
+--------------------------- */
+
+.projects-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.projects-filter {
+  display: inline-flex;
+  padding: 0.25rem;
+  border-radius: 999px;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-border-subtle);
+  gap: 0.25rem;
+}
+
+.filter-button {
+  border-radius: 999px;
+  border: none;
+  background-color: transparent;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.filter-button.is-active {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+/* Project cards */
+
 .project-card {
   padding: 0;
   overflow: hidden;
 }
 
 .project-media {
+  position: relative;
   border-bottom: 1px solid var(--color-border-subtle);
 }
 
@@ -481,8 +641,59 @@ ul {
   object-fit: cover;
 }
 
+.project-actions {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .project-body {
   padding: 1.1rem 1.25rem 1.25rem;
+}
+
+/* ---------------------------
+   Resources
+--------------------------- */
+
+.resource-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.resource-media {
+  position: relative;
+}
+
+.resource-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.resource-pill {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: rgba(15, 23, 42, 0.9);
+  color: #ffffff;
+}
+
+.resource-pill-free {
+  background-color: #16a34a;
+}
+
+.resource-body {
+  padding: 1.1rem 1.25rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 /* ---------------------------
@@ -504,9 +715,38 @@ ul {
   box-shadow: var(--shadow-soft);
 }
 
+.contact-link-list {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.contact-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.contact-link {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  color: var(--color-accent);
+}
+
 .contact-note {
   font-size: 0.8rem;
   color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
   margin-top: 0.75rem;
 }
 
@@ -601,5 +841,17 @@ ul {
 
   .hero-inner {
     gap: 2.25rem;
+  }
+
+  .main-nav {
+    gap: 0.75rem;
+  }
+
+  .nav-actions {
+    gap: 0.5rem;
+  }
+
+  .nav-social {
+    display: none; /* opcional: simplificar header en mobile */
   }
 }
