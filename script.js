@@ -5,27 +5,35 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Alejandro Matesa",
       heroSubtitle: "Analista de Datos y Operaciones · Proyectos Web y Digitales",
       viewProjects: "Ver proyectos",
-      projectsTitle: "Proyectos seleccionados",
+            projectsTitle: "Proyectos seleccionados",
       projectsIntro:
-        "Una combinación de trabajo real con clientes, proyectos académicos y templates diseñados para mostrar estructura, claridad y experiencia de usuario.",
-    
+        "Una combinación de trabajo real con clientes, proyectos académicos y templates pensados para mostrar estructura, claridad y experiencia de usuario.",
+
+      navProjects: "Proyectos",
+      navProducts: "Recursos",
+      navAbout: "Sobre mí",
+      navContact: "Contacto",
+
       proj1Title: "Sistema de Gestión de Inventario",
       proj1Tag: "Python · SQLite · CLI",
       proj1Desc:
         "Proyecto académico: herramienta de consola para gestionar inventario, con operaciones CRUD y reporte de productos con poco stock.",
-      proj1LinkText: "Ver en GitHub",
-    
+      proj1RepoText: "Ver en GitHub",
+      proj1DemoText: "Ver demo",
+
       proj2Title: "Sitio Corporativo MedComp",
       proj2Tag: "HTML · CSS · JS · PHP",
       proj2Desc:
         "Proyecto real para un cliente (2019): sitio corporativo multipágina para una empresa de consultoría médica.",
-      proj2LinkText: "Ver sitio web",
-    
+      proj2DemoText: "Ver sitio web",
+      proj2RepoText: "Ver repositorio",
+
       proj3Title: "Northbridge – Executive Coaching Landing",
       proj3Tag: "Landing page · HTML · CSS · JS",
       proj3Desc:
-        "Template de landing premium para coaches ejecutivos: hero con fotografía, logos de confianza, servicios, proceso y CTA final.",
-      proj3LinkText: "Ver landing",
+        "Template de landing profesional para coaches y consultores senior, con foco en claridad del mensaje y llamadas a la acción.",
+      proj3DemoText: "Ver demo",
+      proj3RepoText: "Ver repositorio",
 
     
       // 📌 NUEVO: sección productos digitales
@@ -50,27 +58,35 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "Alejandro Matesa",
       heroSubtitle: "Data & Operations Analyst · Web & Digital Projects",
       viewProjects: "View projects",
-      projectsTitle: "Selected Projects",
+           projectsTitle: "Selected Projects",
       projectsIntro:
         "A mix of real client work, academic projects and templates designed to show structure, clarity and user experience.",
-    
+
+      navProjects: "Projects",
+      navProducts: "Resources",
+      navAbout: "About",
+      navContact: "Contact",
+
       proj1Title: "Inventory Management System",
       proj1Tag: "Python · SQLite · CLI",
       proj1Desc:
         "Academic project: a console-based inventory management tool with CRUD operations and low-stock reporting.",
-      proj1LinkText: "View on GitHub",
-    
+      proj1RepoText: "View on GitHub",
+      proj1DemoText: "View demo",
+
       proj2Title: "MedComp Corporate Website",
       proj2Tag: "HTML · CSS · JS · PHP",
       proj2Desc:
-        "Real-world client project (2019): multi-page corporate website for a medical consulting company.",
-      proj2LinkText: "View website",
-    
+        "Real client project (2019): multipage corporate website for a medical consulting company.",
+      proj2DemoText: "View live site",
+      proj2RepoText: "View repository",
+
       proj3Title: "Northbridge – Executive Coaching Landing",
       proj3Tag: "Landing page · HTML · CSS · JS",
       proj3Desc:
-        "Premium landing template for executive coaching: photo hero, trusted-by logos, services, process and final CTA.",
-      proj3LinkText: "View landing",
+        "Professional landing page template for executive coaches and consultants, focused on clarity and strong calls to action.",
+      proj3DemoText: "View live demo",
+      proj3RepoText: "View repository",
 
     
       // 📌 NEW: digital products section
@@ -130,7 +146,23 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("dark", isDark);
     themeBtn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
   });
-  
+    // NAV TOGGLE (mobile)
+  const nav = document.querySelector(".nav");
+  const navToggle = document.querySelector(".nav__toggle");
+
+  if (nav && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("nav--open");
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    nav.querySelectorAll(".nav__link").forEach((link) => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("nav--open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
   AOS.init({
   duration: 800,
   easing: "ease-out-cubic",
