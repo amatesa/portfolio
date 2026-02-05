@@ -184,25 +184,28 @@ function applyLanguage(lang) {
     }
   });
 
-  // update active state on buttons
   document.querySelectorAll(".lang-switch").forEach((btn) => {
-    btn.classList.toggle("is-active", btn.dataset.lang === lang);
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle("is-active", isActive);
+    btn.setAttribute("aria-pressed", isActive ? "true" : "false");
   });
 
   localStorage.setItem("siteLang", lang);
 }
 
 // ---------------------------
-// Theme toggle
+// Theme toggle (light / dark)
 // ---------------------------
 function applyTheme(theme) {
-  const body = document.body;
-  const toggle = document.getElementById("theme-toggle");
   const isDark = theme === "dark";
+  const root = document.documentElement;
+  root.setAttribute("data-theme", isDark ? "dark" : "light");
 
-  body.classList.toggle("theme-dark", isDark);
-  toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
-  toggle.textContent = isDark ? "☾" : "☀";
+  const toggle = document.getElementById("theme-toggle");
+  if (toggle) {
+    toggle.setAttribute("aria-pressed", isDark ? "true" : "false");
+    toggle.textContent = isDark ? "☾" : "☀";
+  }
 
   localStorage.setItem("siteTheme", isDark ? "dark" : "light");
 }
@@ -254,6 +257,141 @@ function setupFilters() {
 }
 
 // ---------------------------
+// Scroll progress bar
+// ---------------------------
+function setupScrollProgress() {
+  const bar = document.getElementById("scroll-progress");
+  if (!bar) return;
+
+  const update = () => {
+    const scrollTop =
+      window.scrollY || document.documentElement.scrollTop || 0;
+    const docHeight =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+    bar.style.transform = `scaleX(${progress})`;
+  };
+
+  window.addEventListener("scroll", update, { passive: true });
+  update();
+}
+
+// ---------------------------
+// Scroll reveal animations
+// ---------------------------
+function setupScrollReveal() {
+  const elements = document.querySelectorAll(".reveal");
+  if (!elements.length || !("IntersectionObserver" in window)) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  elements.forEach((el) => observer.observe(el));
+}
+
+// ---------------------------
+// Hero particles (canvas)
+// ---------------------------
+function setupHeroParticles() {
+  const canvas = document.getElementById("hero-particles");
+  if (!canvas || !canvas.getContext) return;
+
+  const ctx = canvas.getContext("2d");
+  const particles = [];
+  const PARTICLE_COUNT = 45;
+
+  function resize() {
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = canvas.offsetWidth * dpr;
+    canvas.height = canvas.offsetHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function initParticles() {
+    particles.length = 0;
+    const width = canvas.offsetWidth;
+    const height = canvas.offsetHeight;
+
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r: 1 + Math.random() * 2,
+      });
+    }
+  }
+
+  function step() {
+    const width = canvas.offsetWidth;
+    const height = canvas.offsetHeight;
+
+    ctx.clearRect(0, 0, width, height);
+
+    ctx.fillStyle = "rgba(148,163,253,0.9)";
+    ctx.strokeStyle = "rgba(56,189,248,0.35)";
+
+    // Draw particles
+    particles.forEach((p) => {
+      p.x += p.vx;
+      p.y += p.vy;
+
+      if (p.x < 0) p.x = width;
+      if (p.x > width) p.x = 0;
+      if (p.y < 0) p.y = height;
+      if (p.y > height) p.y = 0;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    // Connect near particles
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const a = particles[i];
+        const b = particles[j];
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < 100) {
+          ctx.globalAlpha = 1 - dist / 100;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+    ctx.globalAlpha = 1;
+
+    requestAnimationFrame(step);
+  }
+
+  resize();
+  initParticles();
+  step();
+
+  window.addEventListener("resize", () => {
+    resize();
+    initParticles();
+  });
+}
+
+// ---------------------------
 // Init
 // ---------------------------
 document.addEventListener("DOMContentLoaded", () => {
@@ -273,7 +411,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let initialTheme = storedTheme;
 
   if (!initialTheme) {
-    const prefersDark = window.matchMedia &&
+    const prefersDark =
+      window.matchMedia &&
       window.matchMedia("(prefers-color-scheme: dark)").matches;
     initialTheme = prefersDark ? "dark" : "light";
   }
@@ -283,14 +422,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeToggle = document.getElementById("theme-toggle");
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
-      const isDark = document.body.classList.contains("theme-dark");
-      applyTheme(isDark ? "light" : "dark");
+      const current = localStorage.getItem("siteTheme") || "dark";
+      applyTheme(current === "dark" ? "light" : "dark");
     });
   }
 
-  // Nav & filters
+  // Nav, filters, scroll, animations, particles
   setupNav();
   setupFilters();
+  setupScrollProgress();
+  setupScrollReveal();
+  setupHeroParticles();
 
   // Footer year
   const yearSpan = document.getElementById("footer-year");
