@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
       proj1Title: "Sales analysis dashboard",
       proj1Desc:
         "Interactive dashboard built in Google Sheets and Looker Studio as part of a Business Intelligence track. Includes KPIs, filters and storytelling for non-technical stakeholders.",
-      proj1Meta: "Tools: Google Sheets, Looker Studio, data cleaning and visualization.",
+      proj1Meta:
+        "Tools: Google Sheets, Looker Studio, data cleaning and visualization.",
       proj1DemoLabel: "View dashboard (soon)",
       proj1RepoLabel: "View process notes (soon)",
 
@@ -57,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
       proj2Title: "MedComp · Digital health web",
       proj2Desc:
         "Responsive landing page for a healthcare company, focused on clear value proposition, trust and lead generation. Includes reusable sections and component-based structure.",
-      proj2Meta: "HTML, CSS and vanilla JS with a layout ready to evolve into a design system.",
+      proj2Meta:
+        "HTML, CSS and vanilla JS with a layout ready to evolve into a design system.",
       proj2DemoLabel: "View live site (soon)",
       proj2RepoLabel: "View repository (soon)",
 
@@ -93,7 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
       proj6Title: "Portfolio templates & workflow tools",
       proj6Desc:
         "Collection of experiments and future digital products: CV templates, dashboards, Notion systems and Kindle layouts.",
-      proj6Meta: "Work in progress focused on reusable assets for remote professionals.",
+      proj6Meta:
+        "Work in progress focused on reusable assets for remote professionals.",
       proj6DemoLabel: "View catalog (soon)",
       proj6RepoLabel: "View repository (soon)",
 
@@ -407,22 +410,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyTranslations(lang) {
     const dict = translations[lang] || translations.en;
-    document
-      .querySelectorAll("[data-i18n]")
-      .forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (!key || !(key in dict)) return;
-        el.textContent = dict[key];
-      });
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (!key || !(key in dict)) return;
+      el.textContent = dict[key];
+    });
 
     // Theme label
     if (themeLabel) {
       const currentTheme =
         document.documentElement.getAttribute("data-theme") || "light";
       themeLabel.textContent =
-        currentTheme === "dark"
-          ? dict.themeLabelDark
-          : dict.themeLabelLight;
+        currentTheme === "dark" ? dict.themeLabelDark : dict.themeLabelLight;
     }
   }
 
@@ -435,7 +434,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const storedLang = localStorage.getItem("portfolioLang");
-  const initialLang = storedLang === "es" || storedLang === "en" ? storedLang : "en";
+  const initialLang =
+    storedLang === "es" || storedLang === "en" ? storedLang : "en";
   setLanguage(initialLang);
 
   langButtons.forEach((btn) => {
@@ -454,8 +454,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("portfolioTheme", theme);
 
-    const currentLang =
-      localStorage.getItem("portfolioLang") || initialLang;
+    const currentLang = localStorage.getItem("portfolioLang") || initialLang;
     const dict = translations[currentLang] || translations.en;
 
     if (themeLabel) {
