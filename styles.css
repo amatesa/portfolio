@@ -39,18 +39,26 @@
 html[data-theme="dark"] {
   --page-bg: #020617;
   --page-bg-soft: #020617;
-  --surface: #020617;
-  --surface-soft: #020617;
+
+  /* tarjetas un poco más claras que el fondo */
+  --surface: rgba(15, 23, 42, 0.96);
+  --surface-soft: rgba(15, 23, 42, 0.92);
+
   --text-main: #e5e7eb;
   --text-muted: #9ca3af;
-  --border-subtle: rgba(148, 163, 184, 0.2);
-  --accent: #f9fafb;
-  --accent-soft: rgba(15, 23, 42, 0.7);
-  --pill-bg: #020617;
-  --pill-bg-active: #f9fafb;
+
+  --border-subtle: rgba(148, 163, 184, 0.35);
+
+  /* Accent brillante compatible con glassmorphism */
+  --accent: #22d3ee;
+  --accent-soft: rgba(34, 211, 238, 0.16);
+
+  --pill-bg: rgba(15, 23, 42, 0.9);
+  --pill-bg-active: #e5e7eb;
   --pill-text: #e5e7eb;
   --pill-text-active: #020617;
-  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.65);
+
+  --shadow-soft: 0 24px 60px rgba(15, 23, 42, 0.85);
 }
 
 html {
@@ -176,7 +184,7 @@ html[data-theme="dark"] .site-header {
 
 .lang-btn.is-active {
   background: var(--accent);
-  color: #f9fafb;
+  color: #020617;                    /* texto siempre oscuro sobre accent */
   transform: translateY(-1px);
 }
 
@@ -317,7 +325,8 @@ html[data-theme="dark"] .nav-toggle {
   padding: 0.9rem 0 1.2rem;
 }
 
-.site-header.mobile-open .nav-mobile-panel {
+/* Cuando el menú está abierto en mobile */
+.nav-mobile-panel.is-open {
   display: flex;
 }
 
@@ -332,8 +341,7 @@ html[data-theme="dark"] .nav-mobile-panel {
   border-top: 1px solid var(--border-subtle);
 }
 
-/* When mobile menu open */
-
+/* Extra: un borde superior cuando el header está en modo móvil */
 .site-header.mobile-open .nav-inner {
   border-top: 1px solid var(--border-subtle);
 }
@@ -446,7 +454,7 @@ html[data-theme="dark"] .nav-mobile-panel {
 
 .btn-primary {
   background: var(--accent);
-  color: #f9fafb;
+  color: #020617;                    /* texto oscuro legible en ambos temas */
   box-shadow: 0 14px 35px rgba(15, 23, 42, 0.4);
 }
 
