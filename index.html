@@ -1,196 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alejandro Matesa – Portfolio</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alejandro Matesa · Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio de Alejandro Matesa – Data & Operations Analyst con experiencia en fintech, análisis de datos y proyectos web/digitales."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-</head>
-<body>
-  <!-- Controles superiores: idioma y tema -->
-  <header class="top-controls">
-    <div class="controls-group">
-      <button id="lang-es" class="control-btn active">ES</button>
-      <button id="lang-en" class="control-btn">EN</button>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- AOS (animaciones on-scroll) -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    />
+  </head>
+  <body>
+    <!-- Top controls: idioma + tema -->
+    <div class="top-controls">
+      <div class="lang-toggle">
+        <button class="lang-btn" data-lang="es">ES</button>
+        <button class="lang-btn lang-btn--active" data-lang="en">EN</button>
+      </div>
+
+      <button class="theme-toggle" id="themeToggle">🌙 Dark</button>
     </div>
 
-    <div class="controls-group">
-      <button id="theme-toggle" class="control-btn">
-        🌙 Dark
-      </button>
-    </div>
-  </header>
-  <!-- MAIN NAVIGATION -->
-  <header class="site-header">
-    <nav class="nav">
-      <a href="#hero" class="nav__brand">Alejandro Matesa</a>
-  
-      <button
-        class="nav__toggle"
-        aria-label="Toggle navigation"
-        aria-expanded="false"
-      >
-        ☰
-      </button>
-  
-      <ul class="nav__list">
-        <li>
-          <a href="#projects" class="nav__link" data-i18n="navProjects"></a>
-        </li>
-        <li>
-          <a href="#products" class="nav__link" data-i18n="navProducts"></a>
-        </li>
-        <li>
-          <a href="#about" class="nav__link" data-i18n="navAbout"></a>
-        </li>
-        <li>
-          <a href="#contact" class="nav__link" data-i18n="navContact"></a>
-        </li>
-      </ul>
-    </nav>
-  </header>
+    <!-- NAV flotante (se oculta al bajar, aparece al subir) -->
+    <header class="site-header" id="siteHeader">
+      <nav class="nav">
+        <a href="#hero" class="nav__brand">Portfolio</a>
 
-  <!-- HERO -->
-  <section id="hero">
-    <h1 data-i18n="name" data-aos="fade-up"></h1>
-    <p data-i18n="heroSubtitle" data-aos="fade-up" data-aos-delay="100"></p>
-    <a href="#projects"
-       class="btn"
-       data-i18n="viewProjects"
-       data-aos="fade-up"
-       data-aos-delay="200"></a>
-  </section>
+        <button
+          class="nav__toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
 
+        <ul class="nav__list">
+          <li>
+            <a
+              href="#projects"
+              class="nav__link"
+              data-i18n="navProjects"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#products"
+              class="nav__link"
+              data-i18n="navProducts"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="nav__link"
+              data-i18n="navAbout"
+            ></a>
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="nav__link"
+              data-i18n="navContact"
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
- <section id="projects">
-  <h2 data-i18n="projectsTitle"></h2>
-  <p class="section-intro" data-i18n="projectsIntro"></p>
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="section section--hero">
+        <div class="hero__inner">
+          <div
+            class="hero__content"
+            data-aos="fade-right"
+            data-aos-duration="700"
+          >
+            <p class="hero__eyebrow" data-i18n="heroEyebrow"></p>
+            <h1 class="hero__title" data-i18n="heroTitle"></h1>
+            <p class="hero__subtitle" data-i18n="heroSubtitle"></p>
 
-  <div class="projects-grid">
-    <!-- Proyecto TFI -->
-    <article class="project-card" data-aos="fade-up">
-      <figure class="project-thumb">
-        <img
-          src="assets/images/projects/thumb-tfi.webp"
-          alt="Inventory Management System – preview"
-          loading="lazy"
-        />
-      </figure>
-      <h3 data-i18n="proj1Title"></h3>
-      <p class="project-tag" data-i18n="proj1Tag"></p>
-      <p class="project-desc" data-i18n="proj1Desc"></p>
+            <div class="hero__cta">
+              <a
+                href="#projects"
+                class="btn"
+                data-i18n="heroPrimaryCta"
+              ></a>
+              <a
+                href="#contact"
+                class="btn btn--ghost"
+                data-i18n="heroSecondaryCta"
+              ></a>
+            </div>
 
-      <div class="project-links">
-        <a
-          href="https://github.com/amatesa/TFI"
-          target="_blank"
-          class="btn btn--secondary project-link"
-          data-i18n="proj1RepoText"
-        ></a>
-      </div>
-    </article>
+            <p class="hero__pill" data-i18n="heroPill"></p>
+          </div>
 
-    <!-- Proyecto MedComp -->
-    <article class="project-card" data-aos="fade-up">
-      <figure class="project-thumb">
-        <img
-          src="assets/images/projects/thumb-medcomp.webp"
-          alt="MedComp website – preview"
-          loading="lazy"
-        />
-      </figure>
-      <h3 data-i18n="proj2Title"></h3>
-      <p class="project-tag" data-i18n="proj2Tag"></p>
-      <p class="project-desc" data-i18n="proj2Desc"></p>
+          <div
+            class="hero__visual"
+            data-aos="fade-left"
+            data-aos-duration="700"
+          >
+            <figure class="hero__image-wrapper">
+              <img
+                src="assets/images/hero/hero-placeholder.webp"
+                alt="Dashboard and web interfaces illustration"
+                class="hero__image"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
 
-      <div class="project-links">
-        <a
-          href="https://amatesa.github.io/medcomp/"
-          target="_blank"
-          class="btn project-link"
-          data-i18n="proj2DemoText"
-        ></a>
-        <a
-          href="https://github.com/amatesa/medcomp"
-          target="_blank"
-          class="btn btn--secondary project-link"
-          data-i18n="proj2RepoText"
-        ></a>
-      </div>
-    </article>
+      <!-- PROJECTS -->
+      <section id="projects" class="section">
+        <header
+          class="section-header"
+          data-aos="fade-up"
+          data-aos-duration="600"
+        >
+          <h2 data-i18n="projectsTitle"></h2>
+          <p class="section-intro" data-i18n="projectsIntro"></p>
 
-    <!-- Proyecto Northbridge -->
-    <article class="project-card" data-aos="fade-up">
-      <figure class="project-thumb">
-        <img
-          src="assets/images/projects/thumb-northbridge.webp"
-          alt="Northbridge – Executive Coaching landing – preview"
-          loading="lazy"
-        />
-      </figure>
-      <h3 data-i18n="proj3Title"></h3>
-      <p class="project-tag" data-i18n="proj3Tag"></p>
-      <p class="project-desc" data-i18n="proj3Desc"></p>
+          <div class="projects-filters">
+            <button
+              class="filter-chip filter-chip--active"
+              data-filter="all"
+              data-i18n="filterAll"
+            ></button>
+            <button
+              class="filter-chip"
+              data-filter="web"
+              data-i18n="filterWeb"
+            ></button>
+            <button
+              class="filter-chip"
+              data-filter="data"
+              data-i18n="filterData"
+            ></button>
+            <button
+              class="filter-chip"
+              data-filter="template"
+              data-i18n="filterTemplates"
+            ></button>
+          </div>
+        </header>
 
-      <div class="project-links">
-        <a
-          href="https://amatesa.github.io/landing-professional-template/"
-          target="_blank"
-          class="btn project-link"
-          data-i18n="proj3DemoText"
-        ></a>
-        <a
-          href="https://github.com/amatesa/landing-professional-template"
-          target="_blank"
-          class="btn btn--secondary project-link"
-          data-i18n="proj3RepoText"
-        ></a>
-      </div>
-    </article>
-  </div>
-</section>
-  <!-- DIGITAL PRODUCTS / EBOOKS -->
-  <section id="products" class="is-hidden">
-    <h2 data-i18n="productsTitle"></h2>
-    <p class="section-intro" data-i18n="productsIntro"></p>
-  
-    <div class="projects-grid">
-      <article class="project-card">
-        <h3 data-i18n="ebook1Title"></h3>
-        <p class="project-tag" data-i18n="ebook1Tag"></p>
-        <p class="project-desc" data-i18n="ebook1Desc"></p>
-        <a
-          href="#"
-          class="project-link"
-          target="_blank"
-          data-i18n="ebook1LinkText"
-        ></a>
-      </article>
-    </div>
-  </section>
+        <div class="projects-grid">
+          <!-- Proyecto TFI -->
+          <article
+            class="project-card"
+            data-category="data"
+            data-aos="fade-up"
+          >
+            <figure class="project-thumb">
+              <img
+                src="assets/images/projects/thumb-tfi.webp"
+                alt="Inventory Management System – preview"
+                loading="lazy"
+              />
+            </figure>
+            <h3 data-i18n="proj1Title"></h3>
+            <p class="project-tag" data-i18n="proj1Tag"></p>
+            <p class="project-desc" data-i18n="proj1Desc"></p>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2 data-i18n="aboutTitle"></h2>
-    <p data-i18n="aboutBody"></p>
-  </section>
+            <div class="project-links">
+              <!-- solo repo (proyecto consola) -->
+              <a
+                href="https://github.com/amatesa/TFI"
+                target="_blank"
+                class="btn btn--secondary project-link"
+                data-i18n="projRepoText"
+              ></a>
+            </div>
+          </article>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2 data-i18n="contactTitle"></h2>
-    <p>
-      <a href="https://www.linkedin.com/in/alejandro-matesa/" target="_blank">
-        LinkedIn
-      </a>
-      ·
-      <a href="mailto:alejandromatesa@gmail.com">Email</a>
-    </p>
-  </section>
-  
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="script.js"></script>
- 
-</body>
+          <!-- Proyecto MedComp -->
+          <article
+            class="project-card"
+            data-category="web"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <figure class="project-thumb">
+              <img
+                src="assets/images/projects/thumb-medcomp.webp"
+                alt="MedComp website – preview"
+                loading="lazy"
+              />
+            </figure>
+            <h3 data-i18n="proj2Title"></h3>
+            <p class="project-tag" data-i18n="proj2Tag"></p>
+            <p class="project-desc" data-i18n="proj2Desc"></p>
+
+            <div class="project-links">
+              <a
+                href="https://amatesa.github.io/medcomp/"
+                target="_blank"
+                class="btn project-link"
+                data-i18n="projDemoText"
+              ></a>
+              <a
+                href="https://github.com/amatesa/medcomp"
+                target="_blank"
+                class="btn btn--secondary project-link"
+                data-i18n="projRepoText"
+              ></a>
+            </div>
+          </article>
+
+          <!-- Proyecto Northbridge -->
+          <article
+            class="project-card"
+            data-category="template"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <figure class="project-thumb">
+              <img
+                src="assets/images/projects/thumb-northbridge.webp"
+                alt="Northbridge – Executive Coaching landing – preview"
+                loading="lazy"
+              />
+            </figure>
+            <h3 data-i18n="proj3Title"></h3>
+            <p class="project-tag" data-i18n="proj3Tag"></p>
+            <p class="project-desc" data-i18n="proj3Desc"></p>
+
+            <div class="project-links">
+              <a
+                href="https://amatesa.github.io/landing-professional-template/"
+                target="_blank"
+                class="btn project-link"
+                data-i18n="projDemoText"
+              ></a>
+              <a
+                href="https://github.com/amatesa/landing-professional-template"
+                target="_blank"
+                class="btn btn--secondary project-link"
+                data-i18n="projRepoText"
+              ></a>
+            </div>
+          </article>
+
+          <!-- Placeholder futuros proyectos web -->
+          <article
+            class="project-card project-card--placeholder"
+            data-category="web"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <figure class="project-thumb">
+              <img
+                src="assets/images/projects/project-web-placeholder.webp"
+                alt="Web project placeholder"
+                loading="lazy"
+              />
+            </figure>
+            <h3 data-i18n="projPlaceholderWebTitle"></h3>
+            <p class="project-tag" data-i18n="projPlaceholderWebTag"></p>
+            <p class="project-desc" data-i18n="projPlaceholderWebDesc"></p>
+
+            <div class="project-links">
+              <button class="btn btn--ghost project-link btn--disabled">
+                <span data-i18n="projPlaceholderWip"></span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- DIGITAL PRODUCTS / RESOURCES (oculto por ahora, pero ya estructurado) -->
+      <section id="products" class="section section--muted is-hidden">
+        <header class="section-header" data-aos="fade-up">
+          <h2 data-i18n="productsTitle"></h2>
+          <p class="section-intro" data-i18n="productsIntro"></p>
+        </header>
+
+        <div class="products-grid">
+          <article
+            class="product-card"
+            data-aos="fade-up"
+            data-aos-duration="600"
+          >
+            <figure class="product-thumb">
+              <img
+                src="assets/images/products/product-placeholder.webp"
+                alt="Digital product placeholder"
+                loading="lazy"
+              />
+            </figure>
+            <h3 data-i18n="ebook1Title"></h3>
+            <p class="product-tag" data-i18n="ebook1Tag"></p>
+            <p class="product-desc" data-i18n="ebook1Desc"></p>
+
+            <div class="product-links">
+              <button class="btn btn--ghost btn--disabled">
+                <span data-i18n="ebook1Cta"></span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section">
+        <div class="about__inner">
+          <div
+            class="about__profile"
+            data-aos="fade-right"
+            data-aos-duration="600"
+          >
+            <figure class="about__avatar-wrapper">
+              <img
+                src="assets/images/about/avatar-placeholder.png"
+                alt="Avatar placeholder"
+                class="about__avatar"
+                loading="lazy"
+              />
+            </figure>
+            <p class="about__location" data-i18n="aboutLocation"></p>
+            <p class="about__availability" data-i18n="aboutAvailability"></p>
+          </div>
+
+          <div
+            class="about__content"
+            data-aos="fade-left"
+            data-aos-duration="600"
+          >
+            <h2 data-i18n="aboutTitle"></h2>
+            <p class="about__lead" data-i18n="aboutLead"></p>
+
+            <div class="about__columns">
+              <div class="about__column">
+                <h3 data-i18n="aboutDataTitle"></h3>
+                <p data-i18n="aboutDataText"></p>
+              </div>
+              <div class="about__column">
+                <h3 data-i18n="aboutWebTitle"></h3>
+                <p data-i18n="aboutWebText"></p>
+              </div>
+              <div class="about__column">
+                <h3 data-i18n="aboutLearningTitle"></h3>
+                <p data-i18n="aboutLearningText"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section section--muted">
+        <header class="section-header" data-aos="fade-up">
+          <h2 data-i18n="contactTitle"></h2>
+          <p class="section-intro" data-i18n="contactIntro"></p>
+        </header>
+
+        <div class="contact__grid" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact__card">
+            <h3 data-i18n="contactWorkTitle"></h3>
+            <p data-i18n="contactWorkText"></p>
+            <div class="contact__actions">
+              <a
+                href="mailto:alejandromatesa@gmail.com"
+                class="btn"
+                data-i18n="contactEmailCta"
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/alejandro-matesa"
+                target="_blank"
+                class="btn btn--secondary"
+                data-i18n="contactLinkedinCta"
+              ></a>
+            </div>
+          </div>
+
+          <div class="contact__card">
+            <h3 data-i18n="contactCollabTitle"></h3>
+            <p data-i18n="contactCollabText"></p>
+            <div class="contact__actions">
+              <a
+                href="#projects"
+                class="btn btn--ghost"
+                data-i18n="contactProjectsCta"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="site-footer__text" data-i18n="footerText"></p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>
