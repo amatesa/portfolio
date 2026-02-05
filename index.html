@@ -22,6 +22,35 @@
       </button>
     </div>
   </header>
+  <!-- MAIN NAVIGATION -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#hero" class="nav__brand">Alejandro Matesa</a>
+  
+      <button
+        class="nav__toggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+  
+      <ul class="nav__list">
+        <li>
+          <a href="#projects" class="nav__link" data-i18n="navProjects"></a>
+        </li>
+        <li>
+          <a href="#products" class="nav__link" data-i18n="navProducts"></a>
+        </li>
+        <li>
+          <a href="#about" class="nav__link" data-i18n="navAbout"></a>
+        </li>
+        <li>
+          <a href="#contact" class="nav__link" data-i18n="navContact"></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
   <!-- HERO -->
   <section id="hero">
@@ -35,73 +64,93 @@
   </section>
 
 
-  <!-- PROJECTS -->
-    <section id="projects">
-    <h2 data-i18n="projectsTitle"></h2>
-    <p class="section-intro" data-i18n="projectsIntro"></p>
-  
-    <div class="projects-grid">
-      <!-- Proyecto TFI -->
-      <article class="project-card" data-aos="fade-up">
-        <figure class="project-thumb">
-          <img
-            src="assets/images/projects/thumb-tfi.webp"
-            alt="Inventory Management System – preview"
-            loading="lazy"
-          />
-        </figure>
-        <h3 data-i18n="proj1Title"></h3>
-        <p class="project-tag" data-i18n="proj1Tag"></p>
-        <p class="project-desc" data-i18n="proj1Desc"></p>
+ <section id="projects">
+  <h2 data-i18n="projectsTitle"></h2>
+  <p class="section-intro" data-i18n="projectsIntro"></p>
+
+  <div class="projects-grid">
+    <!-- Proyecto TFI -->
+    <article class="project-card" data-aos="fade-up">
+      <figure class="project-thumb">
+        <img
+          src="assets/images/projects/thumb-tfi.webp"
+          alt="Inventory Management System – preview"
+          loading="lazy"
+        />
+      </figure>
+      <h3 data-i18n="proj1Title"></h3>
+      <p class="project-tag" data-i18n="proj1Tag"></p>
+      <p class="project-desc" data-i18n="proj1Desc"></p>
+
+      <div class="project-links">
         <a
           href="https://github.com/amatesa/TFI"
           target="_blank"
-          class="project-link"
-          data-i18n="proj1LinkText"
+          class="btn btn--secondary project-link"
+          data-i18n="proj1RepoText"
         ></a>
-      </article>
-  
-      <!-- Proyecto MedComp -->
-      <article class="project-card" data-aos="fade-up">
-        <figure class="project-thumb">
-          <img
-            src="assets/images/projects/thumb-medcomp.webp"
-            alt="MedComp website – preview"
-            loading="lazy"
-          />
-        </figure>
-        <h3 data-i18n="proj2Title"></h3>
-        <p class="project-tag" data-i18n="proj2Tag"></p>
-        <p class="project-desc" data-i18n="proj2Desc"></p>
+      </div>
+    </article>
+
+    <!-- Proyecto MedComp -->
+    <article class="project-card" data-aos="fade-up">
+      <figure class="project-thumb">
+        <img
+          src="assets/images/projects/thumb-medcomp.webp"
+          alt="MedComp website – preview"
+          loading="lazy"
+        />
+      </figure>
+      <h3 data-i18n="proj2Title"></h3>
+      <p class="project-tag" data-i18n="proj2Tag"></p>
+      <p class="project-desc" data-i18n="proj2Desc"></p>
+
+      <div class="project-links">
         <a
           href="https://amatesa.github.io/medcomp/"
           target="_blank"
-          class="project-link"
-          data-i18n="proj2LinkText"
+          class="btn project-link"
+          data-i18n="proj2DemoText"
         ></a>
-      </article>
-  
-      <!-- Proyecto Northbridge -->
-      <article class="project-card" data-aos="fade-up">
-        <figure class="project-thumb">
-          <img
-            src="assets/images/projects/thumb-northbridge.webp"
-            alt="Northbridge – Executive Coaching landing – preview"
-            loading="lazy"
-          />
-        </figure>
-        <h3 data-i18n="proj3Title"></h3>
-        <p class="project-tag" data-i18n="proj3Tag"></p>
-        <p class="project-desc" data-i18n="proj3Desc"></p>
+        <a
+          href="https://github.com/amatesa/medcomp"
+          target="_blank"
+          class="btn btn--secondary project-link"
+          data-i18n="proj2RepoText"
+        ></a>
+      </div>
+    </article>
+
+    <!-- Proyecto Northbridge -->
+    <article class="project-card" data-aos="fade-up">
+      <figure class="project-thumb">
+        <img
+          src="assets/images/projects/thumb-northbridge.webp"
+          alt="Northbridge – Executive Coaching landing – preview"
+          loading="lazy"
+        />
+      </figure>
+      <h3 data-i18n="proj3Title"></h3>
+      <p class="project-tag" data-i18n="proj3Tag"></p>
+      <p class="project-desc" data-i18n="proj3Desc"></p>
+
+      <div class="project-links">
         <a
           href="https://amatesa.github.io/landing-professional-template/"
           target="_blank"
-          class="project-link"
-          data-i18n="proj3LinkText"
+          class="btn project-link"
+          data-i18n="proj3DemoText"
         ></a>
-      </article>
-    </div>
-  </section>
+        <a
+          href="https://github.com/amatesa/landing-professional-template"
+          target="_blank"
+          class="btn btn--secondary project-link"
+          data-i18n="proj3RepoText"
+        ></a>
+      </div>
+    </article>
+  </div>
+</section>
   <!-- DIGITAL PRODUCTS / EBOOKS -->
   <section id="products" class="is-hidden">
     <h2 data-i18n="productsTitle"></h2>
