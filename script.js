@@ -394,7 +394,16 @@ document.addEventListener("DOMContentLoaded", () => {
       applyTheme(current === "light" ? "dark" : "light");
     });
   }
+const navToggle = document.querySelector(".nav-toggle");
+const siteHeader = document.querySelector(".site-header");
 
+if (navToggle && siteHeader) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navToggle.classList.toggle("is-open");
+    siteHeader.classList.toggle("mobile-open", isOpen);
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+}
   // Features
   setupProjectFilter();
   setupNavigation();
