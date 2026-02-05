@@ -1,329 +1,402 @@
-document.addEventListener("DOMContentLoaded", () => {
-  /* ---------- TRANSLATIONS ---------- */
+// ==============================
+// Translations
+// ==============================
 
-  const translations = {
-    es: {
-      heroEyebrow: "Portfolio · Data, Operaciones y Proyectos Digitales",
-      heroTitle: "Alejandro Matesa",
-      heroSubtitle:
-        "Analista de Operaciones y Datos con experiencia en fintech, reporting ejecutivo y desarrollo de proyectos web y digitales.",
-      heroPrimaryCta: "Ver proyectos",
-      heroSecondaryCta: "Hablemos",
-      heroPill:
-        "Enfoque: trabajo remoto, soluciones prácticas y activos digitales reutilizables.",
+const translations = {
+  en: {
+    navProjects: "Projects",
+    navResources: "Resources",
+    navAbout: "About",
+    navContact: "Contact",
 
-      navProjects: "Proyectos",
-      navProducts: "Recursos",
-      navAbout: "Sobre mí",
-      navContact: "Contacto",
+    heroKicker: "PORTFOLIO · DATA, OPERATIONS & DIGITAL PROJECTS",
+    heroSubtitle:
+      "Data & Operations Analyst with experience in fintech, executive reporting and lightweight web/digital projects.",
+    heroCtaProjects: "View projects",
+    heroCtaContact: "Get in touch",
+    heroFocus:
+      "Focus: remote work, practical solutions and reusable digital assets.",
 
-      projectsTitle: "Proyectos seleccionados",
-      projectsIntro:
-        "Una combinación de trabajo real con clientes, experiencia fintech y proyectos académicos orientados a datos y operaciones.",
+    projectsTitle: "Selected projects",
+    projectsIntro:
+      "A mix of real client work, fintech experience and academic projects focused on data, operations and web delivery.",
 
-      filterAll: "Todos",
-      filterWeb: "Web",
-      filterData: "Data",
-      filterTemplates: "Templates",
+    filterAll: "All",
+    filterWeb: "Web",
+    filterDev: "Dev",
+    filterData: "Data / BI",
+    filterTemplates: "Templates",
 
-      proj1Title: "Sistema de Gestión de Inventario",
-      proj1Tag: "Python · SQLite · CLI",
-      proj1Desc:
-        "Proyecto académico: herramienta de consola para gestionar inventario con operaciones CRUD y reporte de bajo stock.",
+    proj1Title: "Inventory Management System",
+    proj1Tag: "PYTHON · SQLITE · CLI",
+    proj1Desc:
+      "Academic project: a console-based inventory management tool with CRUD operations and low-stock alerts.",
+    proj1RepoLabel: "View repository",
 
-      proj2Title: "Sitio Corporativo MedComp",
-      proj2Tag: "HTML · CSS · JS · PHP",
-      proj2Desc:
-        "Proyecto real para una empresa de consultoría médica. Sitio corporativo multipágina, orientado a claridad y confianza.",
+    proj2Title: "MedComp Corporate Website",
+    proj2Tag: "HTML · CSS · JS · PHP",
+    proj2Desc:
+      "Real client project (2019): multipage corporate website for a medical consulting company.",
+    proj2DemoLabel: "View live demo",
+    proj2RepoLabel: "View repository",
 
-      proj3Title: "Northbridge – Landing de Executive Coaching",
-      proj3Tag: "Landing page · HTML · CSS · JS",
-      proj3Desc:
-        "Template de landing profesional para coaches y consultores senior, con foco en mensaje claro y llamadas a la acción fuertes.",
+    proj3Title: "Northbridge – Executive Coaching Landing",
+    proj3Tag: "LANDING PAGE · HTML · CSS · JS",
+    proj3Desc:
+      "Landing page template for senior coaches and consultants, focused on clarity and strong calls to action.",
+    proj3DemoLabel: "View live demo",
+    proj3RepoLabel: "View repository",
 
-      projDemoText: "Ver demo",
-      projRepoText: "Ver repositorio",
+    productsTitle: "Digital resources (coming soon)",
+    productsIntro:
+      "Ebooks, dashboards and templates focused on operations, data and simple digital products.",
+    ebook1Title: "Kindle/ebook layout guide",
+    ebook1Tag: "KINDLE · LAYOUT · CHECKLIST",
+    ebook1Desc:
+      "A practical guide for turning PDFs or manuscripts into clean Kindle-ready ebooks.",
+    ebook1LinkText: "Get notified",
 
-      projPlaceholderWebTitle: "Nuevo proyecto web",
-      projPlaceholderWebTag: "Template · En progreso",
-      projPlaceholderWebDesc:
-        "Espacio reservado para futuros sitios o templates web orientados a data, consultoría y productos digitales.",
-      projPlaceholderWip: "En desarrollo",
+    resourcesTitle: "Resources",
+    resourcesIntro:
+      "A small collection of references and tools I often use when working on data, operations and web projects.",
+    resource1Title: "Data & Operations toolkit",
+    resource1Tag: "DATA · OPERATIONS",
+    resource1Desc:
+      "Curated list of functions, checks and dashboards patterns I use for reporting and monitoring.",
+    resource1LinkText: "View collection",
+    resource2Title: "Web & digital checklist",
+    resource2Tag: "WEB · TEMPLATES",
+    resource2Desc:
+      "Personal checklist for small websites and digital products: content, UX and basic analytics.",
+    resource2LinkText: "View checklist",
 
-      productsTitle: "Recursos y productos digitales",
-      productsIntro:
-        "Ebooks, guías y recursos descargables enfocados en análisis de datos, automatización ligera y proyectos digitales.",
+    aboutTitle: "About",
+    aboutIntro:
+      "I work at the intersection of data, operations and digital projects. I moved from support and operations roles into analysis, reporting and lightweight web development.",
+    aboutHighlight:
+      "Based in Argentina · Open to fully remote work. Looking for data/operations roles and freelance web/digital projects.",
 
-      ebook1Title: "Ebook #1 – En preparación",
-      ebook1Tag: "Recurso digital",
-      ebook1Desc:
-        "Primer recurso digital orientado a data y proyectos web. Aún en diseño; este bloque funciona como placeholder.",
-      ebook1Cta: "Próximamente",
+    aboutCol1Title: "Data & operations",
+    aboutCol1Text:
+      "Experience with dashboards, KPI monitoring, customer metrics and executive reporting for decision-making.",
+    aboutCol2Title: "Web & digital products",
+    aboutCol2Text:
+      "Development of small websites, WordPress layouts and Kindle/ebook formatting, plus reusable templates.",
+    aboutCol3Title: "Learning & experimentation",
+    aboutCol3Text:
+      "Always studying game design, data analysis and generative AI to connect ideas across disciplines.",
 
-      aboutTitle: "Sobre mí",
-      aboutLead:
-        "Trabajo en la intersección de datos, operaciones y proyectos digitales. Vengo del mundo fintech y administrativo, y hoy combino análisis, reporting y desarrollo web ligero.",
-      aboutLocation: "Ubicación: Argentina · Trabajo 100% remoto.",
-      aboutAvailability:
-        "Busco roles en análisis de datos / operaciones y proyectos freelance web/digital.",
+    contactTitle: "Contact",
+    contactIntro:
+      "If you need someone who can connect data, operations and digital product with a practical, honest approach, let's talk.",
+    contactWorkTitle: "Work & collaborations",
+    contactWorkText:
+      "Available for remote data/operations roles and freelance projects involving websites, dashboards or digital products.",
+    contactWorkEmail: "Email me",
+    contactWorkLinkedIn: "View LinkedIn profile",
+    contactExploreTitle: "Explore first",
+    contactExploreText:
+      "If you prefer to explore first, you can browse the projects and resources in this portfolio.",
+    contactExploreProjects: "View portfolio projects",
 
-      aboutDataTitle: "Data & Operations",
-      aboutDataText:
-        "Experiencia real en fintech (Klarna / Transcom): dashboards en Looker, seguimiento de KPIs, análisis de CSAT/DSAT y reporting ejecutivo orientado a decisiones.",
+    footerText:
+      "Portfolio built by Alejandro Matesa. Data & Operations · Web & Digital Projects.",
+  },
 
-      aboutWebTitle: "Web & Productos Digitales",
-      aboutWebText:
-        "Desarrollo de sitios web con HTML, CSS, JS y WordPress, más maquetación de ebooks y recursos digitales pensados para ser reutilizables y escalables.",
+  es: {
+    navProjects: "Proyectos",
+    navResources: "Recursos",
+    navAbout: "Sobre mí",
+    navContact: "Contacto",
 
-      aboutLearningTitle: "Aprendizaje continuo",
-      aboutLearningText:
-        "Formación en Diseño de Videojuegos (UTN), Data Analysis (Talento Tech BA) y certificaciones de IBM en análisis de datos e IA generativa.",
+    heroKicker: "PORTFOLIO · DATA, OPERATIONS & DIGITAL PROJECTS",
+    heroSubtitle:
+      "Data & Operations Analyst con experiencia en fintech, reportes ejecutivos y proyectos web/digitales livianos.",
+    heroCtaProjects: "Ver proyectos",
+    heroCtaContact: "Contactarme",
+    heroFocus:
+      "Enfoque: trabajo remoto, soluciones prácticas y activos digitales reutilizables.",
 
-      contactTitle: "Contacto",
-      contactIntro:
-        "Si estás buscando a alguien que conecte datos, operaciones y producto digital con foco en claridad y ejecución, podemos hablar.",
-      contactWorkTitle: "Trabajo y colaboraciones",
-      contactWorkText:
-        "Disponible para roles remotos en análisis de datos / operaciones y proyectos freelance de sitios web, dashboards o productos digitales.",
-      contactEmailCta: "Escribirme por email",
-      contactLinkedinCta: "Ver perfil en LinkedIn",
+    projectsTitle: "Proyectos seleccionados",
+    projectsIntro:
+      "Combinación de proyectos reales con clientes, experiencia en fintech y trabajos académicos enfocados en datos, operaciones y entrega web.",
 
-      contactCollabTitle: "Ver más antes de escribir",
-      contactCollabText:
-        "Si preferís explorar primero, podés recorrer los proyectos y recursos del portfolio.",
-      contactProjectsCta: "Ver proyectos del portfolio",
+    filterAll: "Todos",
+    filterWeb: "Web",
+    filterDev: "Dev",
+    filterData: "Data / BI",
+    filterTemplates: "Plantillas",
 
-      footerText:
-        "Portfolio creado por Alejandro Matesa. Data & Operations · Web & Digital Projects."
-    },
+    proj1Title: "Inventory Management System",
+    proj1Tag: "PYTHON · SQLITE · CLI",
+    proj1Desc:
+      "Proyecto académico: herramienta de inventario en consola con operaciones CRUD y alertas de bajo stock.",
+    proj1RepoLabel: "Ver repositorio",
 
-    en: {
-      heroEyebrow: "Portfolio · Data, Operations & Digital Projects",
-      heroTitle: "Alejandro Matesa",
-      heroSubtitle:
-        "Data & Operations Analyst with experience in fintech, executive reporting and lightweight web/digital projects.",
-      heroPrimaryCta: "View projects",
-      heroSecondaryCta: "Get in touch",
-      heroPill:
-        "Focus: remote work, practical solutions and reusable digital assets.",
+    proj2Title: "MedComp Corporate Website",
+    proj2Tag: "HTML · CSS · JS · PHP",
+    proj2Desc:
+      "Proyecto real (2019): sitio corporativo multipágina para una consultora médica.",
+    proj2DemoLabel: "Ver demo online",
+    proj2RepoLabel: "Ver repositorio",
 
-      navProjects: "Projects",
-      navProducts: "Resources",
-      navAbout: "About",
-      navContact: "Contact",
+    proj3Title: "Northbridge – Executive Coaching Landing",
+    proj3Tag: "LANDING PAGE · HTML · CSS · JS",
+    proj3Desc:
+      "Landing page para coaches y consultores senior, enfocada en claridad y llamados a la acción fuertes.",
+    proj3DemoLabel: "Ver demo online",
+    proj3RepoLabel: "Ver repositorio",
 
-      projectsTitle: "Selected projects",
-      projectsIntro:
-        "A mix of real client work, fintech experience and academic projects focused on data, operations and web delivery.",
+    productsTitle: "Recursos digitales (próximamente)",
+    productsIntro:
+      "Ebooks, dashboards y plantillas centradas en operaciones, datos y productos digitales simples.",
+    ebook1Title: "Guía de maquetación Kindle/ebook",
+    ebook1Tag: "KINDLE · MAQUETACIÓN · CHECKLIST",
+    ebook1Desc:
+      "Guía práctica para transformar PDFs o manuscritos en ebooks limpios listos para Kindle.",
+    ebook1LinkText: "Quiero saber cuando esté",
 
-      filterAll: "All",
-      filterWeb: "Web",
-      filterData: "Data",
-      filterTemplates: "Templates",
+    resourcesTitle: "Recursos",
+    resourcesIntro:
+      "Pequeña colección de referencias y herramientas que suelo usar para proyectos de datos, operaciones y web.",
+    resource1Title: "Toolkit de Data & Operations",
+    resource1Tag: "DATA · OPERATIONS",
+    resource1Desc:
+      "Lista curada de funciones, controles y patrones de dashboards que uso para reportes y monitoreo.",
+    resource1LinkText: "Ver colección",
+    resource2Title: "Checklist web & digital",
+    resource2Tag: "WEB · PLANTILLAS",
+    resource2Desc:
+      "Checklist personal para sitios pequeños y productos digitales: contenido, UX y analítica básica.",
+    resource2LinkText: "Ver checklist",
 
-      proj1Title: "Inventory Management System",
-      proj1Tag: "Python · SQLite · CLI",
-      proj1Desc:
-        "Academic project: a console-based inventory management tool with CRUD operations and low-stock alerts.",
+    aboutTitle: "Sobre mí",
+    aboutIntro:
+      "Trabajo en la intersección de datos, operaciones y proyectos digitales. Pasé de roles de soporte y operaciones a análisis, reporting y desarrollo web liviano.",
+    aboutHighlight:
+      "Basado en Argentina · Abierto a trabajo 100% remoto. Busco roles de data/operations y proyectos freelance web/digitales.",
 
-      proj2Title: "MedComp Corporate Website",
-      proj2Tag: "HTML · CSS · JS · PHP",
-      proj2Desc:
-        "Real client project for a medical consulting company. Multipage corporate website focused on clarity and trust.",
+    aboutCol1Title: "Data & operations",
+    aboutCol1Text:
+      "Experiencia con dashboards, monitoreo de KPIs, métricas de clientes y reportes ejecutivos para la toma de decisiones.",
+    aboutCol2Title: "Web & digital products",
+    aboutCol2Text:
+      "Desarrollo de sitios pequeños, maquetación en WordPress y formateo Kindle/ebook, más plantillas reutilizables.",
+    aboutCol3Title: "Aprendizaje continuo",
+    aboutCol3Text:
+      "Estudio diseño de juegos, análisis de datos y IA generativa para conectar ideas entre disciplinas.",
 
-      proj3Title: "Northbridge – Executive Coaching Landing",
-      proj3Tag: "Landing page · HTML · CSS · JS",
-      proj3Desc:
-        "Professional landing page template for senior coaches and consultants, with a clear message and strong calls to action.",
+    contactTitle: "Contacto",
+    contactIntro:
+      "Si necesitás alguien que conecte datos, operaciones y producto digital con un enfoque práctico y honesto, hablemos.",
+    contactWorkTitle: "Trabajo & colaboraciones",
+    contactWorkText:
+      "Disponible para roles remotos de data/operations y proyectos freelance con dashboards, sitios web o productos digitales.",
+    contactWorkEmail: "Escribirme",
+    contactWorkLinkedIn: "Ver perfil de LinkedIn",
+    contactExploreTitle: "Explorar primero",
+    contactExploreText:
+      "Si preferís explorar antes de hablar, podés recorrer los proyectos y recursos de este portfolio.",
+    contactExploreProjects: "Ver proyectos del portfolio",
 
-      projDemoText: "View live demo",
-      projRepoText: "View repository",
+    footerText:
+      "Portfolio creado por Alejandro Matesa. Data & Operations · Web & Digital Projects.",
+  },
+};
 
-      projPlaceholderWebTitle: "New web project",
-      projPlaceholderWebTag: "Template · In progress",
-      projPlaceholderWebDesc:
-        "Reserved space for upcoming web sites or templates focused on data, consulting and digital products.",
-      projPlaceholderWip: "Work in progress",
+// ==============================
+// Language handling
+// ==============================
 
-      productsTitle: "Digital products & resources",
-      productsIntro:
-        "Ebooks, guides and downloadable resources focused on data analysis, light automation and digital projects.",
+let currentLang = localStorage.getItem("portfolio-lang") || "en";
 
-      ebook1Title: "Ebook #1 – In progress",
-      ebook1Tag: "Digital resource",
-      ebook1Desc:
-        "First digital resource focused on data and web projects. Still in design; this block works as a placeholder.",
-      ebook1Cta: "Coming soon",
+function applyLanguage(lang) {
+  const dict = translations[lang];
+  if (!dict) return;
 
-      aboutTitle: "About",
-      aboutLead:
-        "I work at the intersection of data, operations and digital projects. I come from fintech and admin roles, and now combine analysis, reporting and lightweight web development.",
-      aboutLocation: "Based in Argentina · Open to fully remote work.",
-      aboutAvailability:
-        "Looking for data/operations roles and freelance web/digital projects.",
+  currentLang = lang;
+  localStorage.setItem("portfolio-lang", lang);
+  document.documentElement.setAttribute("lang", lang);
 
-      aboutDataTitle: "Data & Operations",
-      aboutDataText:
-        "Real experience in fintech (Klarna / Transcom): Looker dashboards, KPI monitoring, CSAT/DSAT analysis and executive reporting for decision-making.",
-
-      aboutWebTitle: "Web & Digital Products",
-      aboutWebText:
-        "Development of websites using HTML, CSS, JS and WordPress, plus Kindle/ebook layout and reusable digital resources.",
-
-      aboutLearningTitle: "Continuous learning",
-      aboutLearningText:
-        "Game Design studies (UTN), Data Analysis (Talento Tech BA) and IBM certifications in data analysis and generative AI.",
-
-      contactTitle: "Contact",
-      contactIntro:
-        "If you need someone who can connect data, operations and digital product with a practical, honest approach, let's talk.",
-      contactWorkTitle: "Work & collaborations",
-      contactWorkText:
-        "Available for remote data/operations roles and freelance projects involving websites, dashboards or digital products.",
-      contactEmailCta: "Email me",
-      contactLinkedinCta: "View LinkedIn profile",
-
-      contactCollabTitle: "Explore first",
-      contactCollabText:
-        "If you prefer to explore first, you can browse the projects and resources in this portfolio.",
-      contactProjectsCta: "View portfolio projects",
-
-      footerText:
-        "Portfolio built by Alejandro Matesa. Data & Operations · Web & Digital Projects."
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.dataset.i18n;
+    if (dict[key]) {
+      el.textContent = dict[key];
     }
-  };
+  });
 
-  const langElements = document.querySelectorAll("[data-i18n]");
-  const langButtons = document.querySelectorAll(".lang-btn");
+  // Update language buttons state
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.classList.toggle("is-active", btn.dataset.lang === lang);
+  });
+}
 
-  function applyTranslations(lang) {
-    const dict = translations[lang] || translations.en;
-    langElements.forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      if (dict[key]) {
-        el.textContent = dict[key];
-      }
-    });
+// ==============================
+// Theme handling
+// ==============================
+
+function getPreferredTheme() {
+  const stored = localStorage.getItem("portfolio-theme");
+  if (stored === "light" || stored === "dark") return stored;
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  return prefersDark ? "dark" : "light";
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  localStorage.setItem("portfolio-theme", theme);
+
+  const toggle = document.getElementById("themeToggle");
+  if (!toggle) return;
+
+  const icon = toggle.querySelector(".theme-toggle-icon");
+  const label = toggle.querySelector(".theme-toggle-label");
+
+  if (theme === "dark") {
+    icon.textContent = "☀️";
+    label.textContent = "Light";
+  } else {
+    icon.textContent = "🌙";
+    label.textContent = "Dark";
   }
+}
 
-  function setLanguage(lang) {
-    localStorage.setItem("lang", lang);
-    document.documentElement.lang = lang;
-    applyTranslations(lang);
+// ==============================
+// Projects filter
+// ==============================
 
-    langButtons.forEach((btn) => {
-      btn.classList.toggle(
-        "lang-btn--active",
-        btn.getAttribute("data-lang") === lang
-      );
-    });
-  }
+function setupProjectFilter() {
+  const filterButtons = document.querySelectorAll(
+    ".projects-filter [data-filter]"
+  );
+  const cards = document.querySelectorAll(".project-card");
 
-  langButtons.forEach((btn) => {
+  if (!filterButtons.length || !cards.length) return;
+
+  filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      const lang = btn.getAttribute("data-lang");
-      setLanguage(lang);
-    });
-  });
+      const value = btn.dataset.filter;
 
-  const initialLang = localStorage.getItem("lang") || "en";
-  setLanguage(initialLang);
+      filterButtons.forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
 
-  /* ---------- TEMA ---------- */
-
-  const themeToggle = document.getElementById("themeToggle");
-
-  function setTheme(theme) {
-    if (theme === "dark") {
-      document.body.classList.add("dark");
-      themeToggle.textContent = "☀ Light";
-    } else {
-      document.body.classList.remove("dark");
-      themeToggle.textContent = "🌙 Dark";
-    }
-    localStorage.setItem("theme", theme);
-  }
-
-  const storedTheme = localStorage.getItem("theme") || "light";
-  setTheme(storedTheme);
-
-  themeToggle.addEventListener("click", () => {
-    const isDark = document.body.classList.contains("dark");
-    setTheme(isDark ? "light" : "dark");
-  });
-
-  /* ---------- NAV MOBILE + HIDE/SHOW ON SCROLL ---------- */
-
-  const nav = document.querySelector(".nav");
-  const navToggle = document.querySelector(".nav__toggle");
-  const siteHeader = document.getElementById("siteHeader");
-
-  if (nav && navToggle && siteHeader) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = nav.classList.toggle("nav--open");
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-
-    nav.querySelectorAll(".nav__link").forEach((link) => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("nav--open");
-        navToggle.setAttribute("aria-expanded", "false");
+      cards.forEach((card) => {
+        if (value === "all") {
+          card.classList.remove("is-hidden");
+          return;
+        }
+        const cats = (card.dataset.category || "").split(/\s+/);
+        const shouldShow = cats.includes(value);
+        card.classList.toggle("is-hidden", !shouldShow);
       });
     });
+  });
+}
 
-    let lastScrollY = window.scrollY;
+// ==============================
+// Nav: mobile toggle & scroll hide/show
+// ==============================
 
-    window.addEventListener("scroll", () => {
-      const currentY = window.scrollY;
+function setupNavigation() {
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+  const mobilePanel = document.querySelector(".nav-mobile-panel");
+  const navLinks = document.querySelectorAll(
+    ".nav-links a, .nav-mobile-panel a"
+  );
 
-      if (currentY > 10) {
-        siteHeader.classList.add("site-header--scrolled");
-      } else {
-        siteHeader.classList.remove("site-header--scrolled");
+  if (!header || !toggle) return;
+
+  // Mobile toggle
+  toggle.addEventListener("click", () => {
+    const isOpen = header.classList.toggle("mobile-open");
+    toggle.classList.toggle("is-open", isOpen);
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  // Close mobile menu when a link is clicked
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (header.classList.contains("mobile-open")) {
+        header.classList.remove("mobile-open");
+        toggle.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
       }
-
-      if (currentY > lastScrollY + 8 && currentY > 80) {
-        // scrolling down
-        siteHeader.classList.add("site-header--hidden");
-      } else if (currentY < lastScrollY - 8) {
-        // scrolling up
-        siteHeader.classList.remove("site-header--hidden");
-      }
-
-      lastScrollY = currentY;
-    });
-  }
-
-  /* ---------- FILTER PROYECTOS ---------- */
-
-  const filterChips = document.querySelectorAll(".filter-chip");
-  const projectCards = document.querySelectorAll(".project-card");
-
-  function applyFilter(filter) {
-    projectCards.forEach((card) => {
-      const category = card.getAttribute("data-category");
-      const show = filter === "all" || category === filter;
-      card.classList.toggle("is-hidden", !show);
-    });
-  }
-
-  filterChips.forEach((chip) => {
-    chip.addEventListener("click", () => {
-      const filter = chip.getAttribute("data-filter");
-      filterChips.forEach((c) =>
-        c.classList.toggle("filter-chip--active", c === chip)
-      );
-      applyFilter(filter);
     });
   });
 
-  /* ---------- AOS ---------- */
+  // Hide nav on scroll down, show on scroll up
+  let lastY = window.scrollY;
 
-  if (window.AOS) {
-    AOS.init({
-      once: true,
-      duration: 600,
-      easing: "ease-out"
+  window.addEventListener("scroll", () => {
+    const currentY = window.scrollY;
+
+    if (currentY > lastY && currentY > 100) {
+      header.classList.add("site-header--hidden");
+    } else {
+      header.classList.remove("site-header--hidden");
+    }
+
+    header.classList.toggle("elevated", currentY > 10);
+    lastY = currentY;
+  });
+}
+
+// ==============================
+// Smooth internal scroll
+// ==============================
+
+function setupSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    const targetId = link.getAttribute("href").slice(1);
+    if (!targetId) return;
+
+    const target = document.getElementById(targetId);
+    if (!target) return;
+
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      const rect = target.getBoundingClientRect();
+      const offset = rect.top + window.scrollY - 90;
+
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
+    });
+  });
+}
+
+// ==============================
+// Init
+// ==============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Language
+  applyLanguage(currentLang);
+
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const lang = btn.dataset.lang;
+      if (lang && lang !== currentLang) {
+        applyLanguage(lang);
+      }
+    });
+  });
+
+  // Theme
+  applyTheme(getPreferredTheme());
+
+  const themeToggle = document.getElementById("themeToggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = document.documentElement.dataset.theme || "light";
+      applyTheme(current === "light" ? "dark" : "light");
     });
   }
+
+  // Features
+  setupProjectFilter();
+  setupNavigation();
+  setupSmoothScroll();
 });
