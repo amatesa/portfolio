@@ -375,205 +375,32 @@ document.addEventListener("DOMContentLoaded", () => {
       aboutCol1Title: "Perfil",
       aboutCol1Text1:
         "Analista de operaciones y datos con más de cinco años en fintech y experiencia de cliente, principalmente trabajando con Klarna a través de Transcom en Zagreb, Croacia.",
-      aboutCol1Text2:
-        "Pasé de soporte al cliente a calidad y análisis de datos, construyendo trackers, dashboards simples y documentación para mejorar procesos.",
-      aboutCol1Text3:
-        "Hoy combino esa experiencia con estudios formales en Business Intelligence y Diseño de Videojuegos, además de proyectos web y de maquetación Kindle propios.",
+      aboutCol1Text2:// Mobile nav toggle
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
 
-      aboutCol2Title: "Qué aporto",
-      aboutCol2Item1:
-        "Limpieza de datos, validación y estadística básica alineada a preguntas de negocio",
-      aboutCol2Item2:
-        "Diseño de dashboards y BI storytelling adaptado a perfiles no técnicos",
-      aboutCol2Item3:
-        "Templates web y UI para contenido intensivo en datos, cuidando estructura y copy",
-      aboutCol2Item4:
-        "Mentalidad de game dev: iteración, feedback, documentación y experimentos pequeños",
-
-      aboutCol3Title: "Herramientas & stack",
-      aboutCol3Item1:
-        "Google Sheets, Looker Studio, fundamentos de SQL y data storytelling",
-      aboutCol3Item2:
-        "HTML, CSS y JavaScript (vanilla) para landings y prototipos",
-      aboutCol3Item3:
-        "Unity 2D, C#, Notion, Calibre & herramientas para Kindle",
-      aboutCol3Item4:
-        "GitHub, trabajo remoto, flujos async y notas estructuradas",
-
-      // Contact
-      contactKicker: "Colaboremos",
-      contactTitle: "Trabajemos juntos",
-      contactIntro:
-        "Si necesitás dashboards, productos digitales o alguien que pueda hacerse cargo de un problema desde el caos inicial hasta una solución documentada, hablemos.",
-
-      contactSubTitle: "Cómo prefiero trabajar",
-      contactText1:
-        "Me gustan los roles con objetivos claros, espacio para proponer mejoras y expectativas realistas sobre experimentos e iteración.",
-      contactText2:
-        "Me interesan especialmente roles remotos donde se crucen operaciones, datos y productos digitales.",
-
-      contactEmailLabel: "Email",
-      contactGithubLabel: "GitHub",
-      contactLinkedinLabel: "LinkedIn (próximamente)",
-      contactNote:
-        "Abierto a posiciones remotas (full-time o freelance) y colaboraciones en dashboards, templates, proyectos web o experimentos relacionados con juegos.",
-
-      // Footer
-      footerText:
-        "Portfolio de Alejandro Matesa · Construido con HTML, CSS y vanilla JS.",
-    },
-  };
-
-  const langButtons = document.querySelectorAll(".lang-btn");
-  const themeToggleBtn = document.getElementById("themeToggle");
-  const themeLabel = themeToggleBtn?.querySelector(".theme-toggle-label");
-  const themeIcon = themeToggleBtn?.querySelector(".theme-toggle-icon");
-  const header = document.querySelector(".site-header");
-  const navToggle = document.querySelector(".nav-toggle");
-  const mobileNavLinks = document.querySelectorAll(".nav-mobile-panel a");
-  const filterButtons = document.querySelectorAll(".projects-filter .pill");
-  const projectCards = document.querySelectorAll(".project-card");
-
-  // =========
-  // Translation
-  // =========
-
-  function applyTranslations(lang) {
-    const dict = translations[lang] || translations.en;
-    document.querySelectorAll("[data-i18n]").forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      if (!key || !(key in dict)) return;
-      el.textContent = dict[key];
-    });
-
-    // Theme label
-    if (themeLabel) {
-      const currentTheme =
-        document.documentElement.getAttribute("data-theme") || "light";
-      themeLabel.textContent =
-        currentTheme === "dark" ? dict.themeLabelDark : dict.themeLabelLight;
-    }
-  }
-
-  function setLanguage(lang) {
-    localStorage.setItem("portfolioLang", lang);
-    applyTranslations(lang);
-    langButtons.forEach((btn) => {
-      btn.classList.toggle("is-active", btn.dataset.lang === lang);
-    });
-  }
-
-  const storedLang = localStorage.getItem("portfolioLang");
-  const initialLang =
-    storedLang === "es" || storedLang === "en" ? storedLang : "en";
-  setLanguage(initialLang);
-
-  langButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const selected = btn.dataset.lang;
-      if (!selected) return;
-      setLanguage(selected);
-    });
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("is-open");
+    navToggle.classList.toggle("is-open", isOpen);
+    navToggle.setAttribute("aria-expanded", String(isOpen));
   });
 
-  // =========
-  // Theme toggle
-  // =========
-
-  function setTheme(theme) {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("portfolioTheme", theme);
-
-    const currentLang = localStorage.getItem("portfolioLang") || initialLang;
-    const dict = translations[currentLang] || translations.en;
-
-    if (themeLabel) {
-      themeLabel.textContent =
-        theme === "dark" ? dict.themeLabelDark : dict.themeLabelLight;
-    }
-
-    if (themeIcon) {
-      themeIcon.setAttribute("aria-label", theme);
-    }
-  }
-
-  const storedTheme = localStorage.getItem("portfolioTheme");
-  const initialTheme =
-    storedTheme === "dark" || storedTheme === "light" ? storedTheme : "light";
-  setTheme(initialTheme);
-
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", () => {
-      const current =
-        document.documentElement.getAttribute("data-theme") || "light";
-      const next = current === "dark" ? "light" : "dark";
-      setTheme(next);
-    });
-  }
-
-  // =========
-  // Mobile nav
-  // =========
-
-  if (navToggle && header) {
-    navToggle.addEventListener("click", () => {
-      const isOpen = header.classList.toggle("mobile-open");
-      navToggle.classList.toggle("is-open", isOpen);
-      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-  }
-
-  mobileNavLinks.forEach((link) => {
+  // Close menu when clicking a link on mobile
+  const navLinks = navMenu.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      if (!header || !navToggle) return;
-      header.classList.remove("mobile-open");
-      navToggle.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+      if (window.innerWidth <= 720) {
+        navMenu.classList.remove("is-open");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      }
     });
   });
+}
 
-  // =========
-  // Hide header on scroll & elevation
-  // =========
-
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener("scroll", () => {
-    if (!header) return;
-    const current = window.scrollY;
-
-    const isScrollDown = current > lastScrollY && current > 80;
-    header.classList.toggle("is-hidden", isScrollDown);
-
-    const isElevated = current > 16;
-    header.classList.toggle("is-elevated", isElevated);
-
-    lastScrollY = current;
-  });
-
-  // =========
-  // Project filters
-  // =========
-
-  filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const filter = btn.getAttribute("data-filter") || "all";
-
-      filterButtons.forEach((b) => b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-
-      projectCards.forEach((card) => {
-        const raw = card.getAttribute("data-category") || "";
-        const categories = raw
-          .split(" ")
-          .map((c) => c.trim().toLowerCase())
-          .filter(Boolean);
-
-        const shouldShow =
-          filter === "all" || categories.includes(filter.toLowerCase());
-
-        card.classList.toggle("is-hidden", !shouldShow);
-      });
-    });
-  });
-});
+// Set current year in footer
+const yearSpan = document.getElementById("year");
+if (yearSpan) {
+  yearSpan.textContent = String(new Date().getFullYear());
+}
