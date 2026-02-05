@@ -330,26 +330,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========
-  // Mobile nav
+    // =========
+  // Mobile nav 
   // =========
 
   if (navToggle && header) {
+    const mobilePanel = document.querySelector(".nav-mobile-panel");
+
     navToggle.addEventListener("click", () => {
-      const isOpen = header.classList.toggle("mobile-open");
-      navToggle.classList.toggle("is-open", isOpen);
+      if (!mobilePanel) return;
+
+      const isOpen = navToggle.classList.toggle("is-open");
+      mobilePanel.classList.toggle("is-open", isOpen);
+      header.classList.toggle("mobile-open", isOpen);
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
-  }
 
-  mobileNavLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      if (!header || !navToggle) return;
-      header.classList.remove("mobile-open");
-      navToggle.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+    // Cerrar menú al hacer clic en cualquiera de los links
+    mobileNavLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (!mobilePanel) return;
+
+        mobilePanel.classList.remove("is-open");
+        header.classList.remove("mobile-open");
+        navToggle.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
     });
-  });
+  }
 
   // =========
   // Hide header on scroll & elevation
