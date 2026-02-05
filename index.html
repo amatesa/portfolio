@@ -2,380 +2,526 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Alejandro Matesa – Portfolio de Operaciones, Datos & Web</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="Portfolio de Alejandro Matesa – Analista de Operaciones y Datos con experiencia en fintech, e-commerce y desarrollo web."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro Matesa · Web, Data & Digital Products</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Header + Navegación -->
+  <!-- Header / Navbar -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo">
-        <a href="#inicio" class="logo-link">
-          <span class="logo-mark">AM</span>
-          <span class="logo-text">Alejandro Matesa</span>
-        </a>
-      </div>
+      <a href="#hero" class="logo-link">
+        <span class="logo-mark">AM</span>
+        <span class="logo-text" data-i18n="brandName">Alejandro Matesa</span>
+      </a>
 
-      <nav class="main-nav" aria-label="Navegación principal">
-        <button
-          class="nav-toggle"
-          id="navToggle"
-          aria-controls="navMenu"
-          aria-expanded="false"
-        >
+      <nav class="main-nav">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
           <span class="nav-toggle-line"></span>
           <span class="nav-toggle-line"></span>
           <span class="nav-toggle-line"></span>
-          <span class="visually-hidden">Abrir / cerrar navegación</span>
         </button>
 
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#inicio" class="nav-link">Inicio</a></li>
-          <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
-          <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
-          <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-          <li><a href="#recursos" class="nav-link">Recursos</a></li>
-          <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <ul class="nav-menu" id="main-menu">
+          <li><a class="nav-link" href="#projects" data-i18n="navProjects">Projects</a></li>
+          <li><a class="nav-link" href="#resources" data-i18n="navResources">Resources</a></li>
+          <li><a class="nav-link" href="#about" data-i18n="navAbout">About</a></li>
+          <li><a class="nav-link" href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
+
+        <div class="nav-actions">
+          <div class="nav-control-group" aria-label="Language">
+            <button class="chip-toggle lang-switch is-active" data-lang="es">ES</button>
+            <button class="chip-toggle lang-switch" data-lang="en">EN</button>
+          </div>
+          <button
+            class="icon-btn theme-toggle"
+            id="theme-toggle"
+            type="button"
+            aria-label="Toggle dark mode"
+            aria-pressed="false"
+          >
+            ☀
+          </button>
+          <div class="nav-social">
+            <a
+              class="icon-btn"
+              href="https://www.linkedin.com/in/tu-usuario"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <!-- Simple LinkedIn icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.24 8.32h4.53V24H.24V8.32zM8.34 8.32h4.34v2.13h.06c.6-1.13 2.06-2.32 4.23-2.32C21.74 8.13 24 10 24 14.02V24h-4.53v-8.83c0-2.11-.04-4.82-2.94-4.82-2.94 0-3.39 2.29-3.39 4.66V24H8.34V8.32z"
+                />
+              </svg>
+            </a>
+            <a
+              class="icon-btn"
+              href="mailto:tu-email@example.com"
+              aria-label="Email"
+            >
+              <!-- Simple mail icon -->
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M4 4h16a2 2 0 0 1 2 2v1.2l-10 5.9-10-5.9V6a2 2 0 0 1 2-2zm-2 6.09V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-7.91l-9.39 5.54a2 2 0 0 1-2.02 0L2 10.09z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- Hero -->
-    <section id="inicio" class="hero">
+    <section class="hero section" id="hero">
       <div class="container hero-inner">
-        <div class="hero-content">
-          <p class="hero-kicker">Hola, soy</p>
-          <h1 class="hero-title">Alejandro Matesa</h1>
-          <p class="hero-subtitle">
-            Analista de Operaciones y Datos en fintech &amp; e-commerce
+        <div class="hero-copy">
+          <p class="hero-kicker" data-i18n="heroKicker">
+            Web · Data · Digital Products
           </p>
-          <p class="hero-text">
-            Combino experiencia en operaciones, dashboards y desarrollo web
-            para crear soluciones digitales prácticas, pensadas para trabajo remoto
-            y proyectos escalables.
+          <h1 class="hero-title" data-i18n="heroTitle">
+            Hola, soy Alejandro
+          </h1>
+          <p class="hero-subtitle" data-i18n="heroSubtitle">
+            Diseñador web junior, creador de contenido y perfil de datos en formación.
+          </p>
+          <p class="hero-text" data-i18n="heroBody">
+            Combino diseño, análisis y aprendizaje continuo para crear experiencias digitales claras,
+            medibles y fáciles de mantener. Me interesa especialmente el cruce entre desarrollo web,
+            business intelligence y educación online.
           </p>
 
           <div class="hero-actions">
-            <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
-            <a href="#contacto" class="btn btn-outline">Hablemos</a>
+            <a href="#projects" class="btn btn-primary" data-i18n="heroCtaPrimary">
+              Ver proyectos
+            </a>
+            <a href="#contact" class="btn btn-outline" data-i18n="heroCtaSecondary">
+              Hablemos
+            </a>
           </div>
 
           <div class="hero-meta">
-            <span class="pill">Fintech &amp; medios de pago</span>
-            <span class="pill">Dashboards &amp; reporting</span>
-            <span class="pill">Web &amp; productos digitales</span>
+            <span class="pill" data-i18n="heroMeta1">
+              Perfil orientado a remoto
+            </span>
+            <span class="pill" data-i18n="heroMeta2">
+              Web · BI · Automatización
+            </span>
           </div>
         </div>
 
         <div class="hero-media">
           <div class="hero-image-wrapper">
             <img
-              src="assets/profile-alejandro.webp"
-              alt="Retrato ilustrado de Alejandro trabajando con dashboards y código"
+              src="assets/profile-alejandro.jpg"
+              alt="Retrato de Alejandro Matesa"
               class="hero-image"
             />
           </div>
-          <p class="hero-caption">
-            Experiencia en entornos internacionales (Klarna/Transcom) y proyectos
-            web reales orientados a portfolio y clientes.
+          <p class="hero-caption" data-i18n="heroCaption">
+            Pasando de soporte y calidad a diseño web, datos y productos digitales.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Sobre mí -->
-    <section id="sobre-mi" class="section section-alt">
+    <!-- About -->
+    <section class="section-alt" id="about">
       <div class="container two-column">
-        <div class="section-header">
-          <h2 class="section-title">Sobre mí</h2>
-          <p class="section-kicker">Operaciones, datos y web en un mismo perfil</p>
-        </div>
-        <div class="section-body">
-          <p>
-            Soy Analista de Operaciones y Datos con experiencia en entornos fintech
-            internacionales (Klarna / Transcom) y proyectos digitales reales. Trabajo en la
-            intersección entre operaciones, reporting y desarrollo web: creo dashboards
-            accionables, optimizo procesos y diseño sitios pensados para productos y servicios
-            digitales.
-          </p>
-          <p>
-            Mi foco hoy está en trabajo remoto, proyectos escalables y monetización mediante
-            templates, ebooks e infoproductos. Me interesa documentar procesos de forma clara
-            y honesta: sin inflar seniority, pero mostrando impacto real en negocio.
-          </p>
-          <p>
-            Vengo de un recorrido mixto: coordinación administrativa en salud, varios años en
-            fintech trabajando con KPIs de calidad y performance, y experiencia como
-            desarrollador web freelance (WordPress, Tienda Nube, landings y portfolios).
-            Actualmente continúo formándome en Data Analytics (Talento Tech, IBM, UTN) para
-            consolidar un perfil de operaciones + datos.
-          </p>
-        </div>
-      </div>
-    </section>
+        <div>
+          <header class="section-header">
+            <h2 class="section-title" data-i18n="aboutTitle">About me</h2>
+            <p class="section-kicker" data-i18n="aboutKicker">
+              Un perfil junior que conecta aprendizaje serio con proyectos reales.
+            </p>
+          </header>
 
-    <!-- Habilidades -->
-    <section id="habilidades" class="section">
-      <div class="container">
-        <div class="section-header centered">
-          <h2 class="section-title">Habilidades principales</h2>
-          <p class="section-kicker">
-            Lo que uso en proyectos reales, no solo en teoría
+          <p data-i18n="aboutBody1">
+            Actualmente estoy construyendo mi portfolio combinando desarrollo web (HTML, CSS,
+            JavaScript y bases de React), análisis de datos y automatización de procesos. Vengo
+            de roles de soporte, calidad y análisis operativo, donde aprendí a escuchar al usuario
+            y a traducir problemas en soluciones concretas.
+          </p>
+          <p data-i18n="aboutBody2">
+            Me interesa trabajar con equipos que valoren la experimentación, la documentación y
+            la mejora continua. No vendo humo: prefiero mostrar procesos, decisiones y cómo voy
+            aprendiendo versión tras versión.
           </p>
         </div>
 
-        <div class="cards-grid">
-          <article class="card">
-            <h3 class="card-title">Data &amp; Analytics</h3>
-            <p class="card-text">
-              Dashboards en Looker Studio, análisis operativo en Google Sheets/Excel
-              y uso práctico de Python y SQL a nivel intermedio para explorar datos
-              y estructurar reporting accionable.
-            </p>
-            <ul class="tag-list">
-              <li class="tag">Looker Studio</li>
-              <li class="tag">Google Sheets</li>
-              <li class="tag">Python (básico-intermedio)</li>
-              <li class="tag">SQL (conceptual)</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Operaciones &amp; Fintech</h3>
-            <p class="card-text">
-              Experiencia en medios de pago, soporte a comercios, seguimiento de KPIs
-              (CSAT, DSAT, calidad) y coordinación con equipos globales en modelos
-              híbridos de operaciones y análisis.
-            </p>
-            <ul class="tag-list">
-              <li class="tag">Klarna / Transcom</li>
-              <li class="tag">KPIs de servicio</li>
-              <li class="tag">Procesos operativos</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">Web &amp; Templates</h3>
-            <p class="card-text">
-              Desarrollo de sitios web y landings (HTML, CSS, JavaScript básico,
-              WordPress, Tienda Nube) y creación de templates reutilizables orientados
-              a portfolio y productos digitales.
-            </p>
-            <ul class="tag-list">
-              <li class="tag">HTML/CSS</li>
-              <li class="tag">JavaScript básico</li>
-              <li class="tag">WordPress</li>
-              <li class="tag">Tienda Nube</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3 class="card-title">IA &amp; Automatización</h3>
-            <p class="card-text">
-              Uso de herramientas de IA para acelerar investigación, generación de
-              contenido técnico y prototipos de productos digitales, siempre con foco
-              en aplicaciones reales y verificables.
-            </p>
-            <ul class="tag-list">
-              <li class="tag">ChatGPT</li>
-              <li class="tag">Prompts técnicos</li>
-              <li class="tag">Automatización ligera</li>
-            </ul>
-          </article>
+        <div>
+          <div class="about-list">
+            <div class="card">
+              <h3 class="card-title" data-i18n="aboutNowTitle">Qué estoy haciendo ahora</h3>
+              <p class="card-text" data-i18n="aboutNowBody">
+                Desarrollo sitios estáticos y pequeñas aplicaciones front-end, diseño dashboards
+                básicos y creo recursos educativos digitales (guías, plantillas, pequeños cursos).
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title" data-i18n="aboutHelpTitle">Cómo puedo ayudar</h3>
+              <p class="card-text" data-i18n="aboutHelpBody">
+                Puedo ayudarte a aterrizar ideas en prototipos web claros, organizar datos en
+                dashboards simples y documentar procesos para que otras personas del equipo
+                puedan continuar el trabajo.
+              </p>
+            </div>
+            <div class="card">
+              <h3 class="card-title" data-i18n="aboutLearningTitle">En qué estoy aprendiendo</h3>
+              <p class="card-text" data-i18n="aboutLearningBody">
+                Profundizando en React, buenas prácticas de BI, automatización con Python y
+                uso responsable de IA para acelerar pero sin perder control del resultado.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Proyectos -->
-    <section id="proyectos" class="section section-alt">
+    <!-- Projects -->
+    <section class="section" id="projects">
       <div class="container">
-        <div class="section-header centered">
-          <h2 class="section-title">Proyectos seleccionados</h2>
-          <p class="section-kicker">
-            Casos que representan cómo trabajo con operaciones, datos y web
+        <header class="section-header centered">
+          <h2 class="section-title" data-i18n="projectsTitle">Projects</h2>
+          <p class="section-kicker" data-i18n="projectsKicker">
+            Una selección de proyectos personales y académicos para practicar diseño web,
+            datos y automatización.
           </p>
+        </header>
+
+        <div class="projects-header">
+          <div class="projects-filter">
+            <button class="filter-button is-active" data-filter="all" data-i18n="filterAll">
+              Todos
+            </button>
+            <button class="filter-button" data-filter="web" data-i18n="filterWeb">
+              Web Design
+            </button>
+            <button class="filter-button" data-filter="data" data-i18n="filterData">
+              Data & BI
+            </button>
+            <button class="filter-button" data-filter="automation" data-i18n="filterAutomation">
+              Automation & Tools
+            </button>
+          </div>
         </div>
 
         <div class="cards-grid projects-grid">
-          <!-- Proyecto 1 -->
-          <article class="card project-card">
+          <!-- Project 1 -->
+          <article class="card project-card" data-category="data">
             <div class="project-media">
               <img
-                src="assets/project-inventory.webp"
-                alt="Captura de dashboard de inventario y ventas"
+                src="assets/project-eco-dashboard.jpg"
+                alt="Captura de un dashboard analítico en laptop"
                 class="project-image"
               />
+              <div class="project-actions">
+                <a
+                  href="#"
+                  class="icon-btn icon-btn-soft"
+                  aria-label="Ver demo del proyecto"
+                >
+                  <!-- external link icon -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"
+                    />
+                    <path
+                      d="M5 5h5V3H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5h-2v5H5V5z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  class="icon-btn icon-btn-soft"
+                  aria-label="Ver repositorio en GitHub"
+                >
+                  <!-- simple repo icon -->
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2C6.48 2 2 6.58 2 12.25c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.48 0-.24-.01-1.03-.02-1.87-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.12-1.5-1.12-1.5-.92-.64.07-.63.07-.63 1.02.07 1.55 1.07 1.55 1.07.9 1.58 2.37 1.12 2.95.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.18 9.18 0 0 1 12 6.1c.85 0 1.72.12 2.53.34 1.9-1.32 2.74-1.05 2.74-1.05.56 1.41.21 2.45.11 2.71.64.72 1.02 1.63 1.02 2.75 0 3.93-2.34 4.79-4.57 5.04.36.33.68.98.68 1.98 0 1.43-.01 2.58-.01 2.93 0 .27.18.59.69.48A10.28 10.28 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
             <div class="project-body">
-              <h3 class="card-title">Inventory Management System – TFI</h3>
-              <p class="card-meta">Análisis de datos / Operaciones</p>
-              <p class="card-text">
-                Sistema de gestión de stock y ventas desarrollado como proyecto
-                académico, con foco en control de inventario, alertas y reporting de
-                indicadores clave. Incluye estructura de datos, vistas en Sheets
-                y tablero resumen.
+              <h3 class="card-title">EcoTech Dashboard</h3>
+              <p class="card-text" data-i18n="project1Body">
+                Dashboard de práctica para analizar métricas de un negocio digital
+                ficticio: ingresos, tickets, retención y cohortes simples.
               </p>
-              <ul class="tag-list">
-                <li class="tag">Google Sheets</li>
-                <li class="tag">Looker Studio</li>
-                <li class="tag">KPIs de operaciones</li>
-              </ul>
+              <div class="tag-list">
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Looker Studio</span>
+                <span class="tag">Python (basics)</span>
+              </div>
             </div>
           </article>
 
-          <!-- Proyecto 2 -->
-          <article class="card project-card">
+          <!-- Project 2 -->
+          <article class="card project-card" data-category="web">
             <div class="project-media">
               <img
-                src="assets/project-medcomp.webp"
-                alt="Diseño de sitio web institucional MedComp"
+                src="assets/project-minimal-studio.jpg"
+                alt="Sitio web minimalista en una pantalla de escritorio"
                 class="project-image"
               />
+              <div class="project-actions">
+                <a href="#" class="icon-btn icon-btn-soft" aria-label="Ver demo del proyecto">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"
+                    />
+                    <path
+                      d="M5 5h5V3H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5h-2v5H5V5z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="icon-btn icon-btn-soft" aria-label="Ver repositorio en GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2C6.48 2 2 6.58 2 12.25c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.48 0-.24-.01-1.03-.02-1.87-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.12-1.5-1.12-1.5-.92-.64.07-.63.07-.63 1.02.07 1.55 1.07 1.55 1.07.9 1.58 2.37 1.12 2.95.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.18 9.18 0 0 1 12 6.1c.85 0 1.72.12 2.53.34 1.9-1.32 2.74-1.05 2.74-1.05.56 1.41.21 2.45.11 2.71.64.72 1.02 1.63 1.02 2.75 0 3.93-2.34 4.79-4.57 5.04.36.33.68.98.68 1.98 0 1.43-.01 2.58-.01 2.93 0 .27.18.59.69.48A10.28 10.28 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
             <div class="project-body">
-              <h3 class="card-title">MedComp Corporate Website</h3>
-              <p class="card-meta">Diseño web / Front-end</p>
-              <p class="card-text">
-                Sitio institucional para una empresa médica ficticia, orientado
-                a presentar servicios, equipo y contacto, optimizado para usarse
-                como template adaptable para futuros clientes y proyectos.
+              <h3 class="card-title">Minimal Studio</h3>
+              <p class="card-text" data-i18n="project2Body">
+                Landing page responsive para un estudio creativo, pensada como
+                práctica de maquetación semántica, accesibilidad y performance básica.
               </p>
-              <ul class="tag-list">
-                <li class="tag">HTML</li>
-                <li class="tag">CSS</li>
-                <li class="tag">JavaScript</li>
-              </ul>
+              <div class="tag-list">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
             </div>
           </article>
 
-          <!-- Proyecto 3 -->
-          <article class="card project-card">
+          <!-- Project 3 -->
+          <article class="card project-card" data-category="automation">
             <div class="project-media">
               <img
-                src="assets/project-portfolio.webp"
-                alt="Vista del portfolio y ecosistema de templates"
+                src="assets/project-contentflow.jpg"
+                alt="Laptop con herramientas de contenido y grabación"
                 class="project-image"
               />
+              <div class="project-actions">
+                <a href="#" class="icon-btn icon-btn-soft" aria-label="Ver demo del proyecto">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z"
+                    />
+                    <path
+                      d="M5 5h5V3H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5h-2v5H5V5z"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="icon-btn icon-btn-soft" aria-label="Ver repositorio en GitHub">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 2C6.48 2 2 6.58 2 12.25c0 4.5 2.87 8.31 6.84 9.66.5.1.68-.22.68-.48 0-.24-.01-1.03-.02-1.87-2.78.62-3.37-1.22-3.37-1.22-.45-1.18-1.12-1.5-1.12-1.5-.92-.64.07-.63.07-.63 1.02.07 1.55 1.07 1.55 1.07.9 1.58 2.37 1.12 2.95.86.09-.67.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.18 9.18 0 0 1 12 6.1c.85 0 1.72.12 2.53.34 1.9-1.32 2.74-1.05 2.74-1.05.56 1.41.21 2.45.11 2.71.64.72 1.02 1.63 1.02 2.75 0 3.93-2.34 4.79-4.57 5.04.36.33.68.98.68 1.98 0 1.43-.01 2.58-.01 2.93 0 .27.18.59.69.48A10.28 10.28 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
             <div class="project-body">
-              <h3 class="card-title">Portfolio &amp; Templates Ecosystem</h3>
-              <p class="card-meta">Producto digital / Web</p>
-              <p class="card-text">
-                Ecosistema de portfolio + templates web publicados en GitHub Pages,
-                pensado para mostrar skills en data, operaciones y desarrollo
-                front-end sin inflar seniority. Incluye estructura modular
-                para futuros infoproductos.
+              <h3 class="card-title">ContentFlow</h3>
+              <p class="card-text" data-i18n="project3Body">
+                Sistema sencillo para organizar ideas de contenido, tareas y
+                recursos, conectando tablero, calendario y repositorios de forma
+                práctica.
               </p>
-              <ul class="tag-list">
-                <li class="tag">GitHub Pages</li>
-                <li class="tag">HTML/CSS/JS</li>
-                <li class="tag">Templates reutilizables</li>
-              </ul>
+              <div class="tag-list">
+                <span class="tag">Notion</span>
+                <span class="tag">Automation</span>
+                <span class="tag">Workflows</span>
+              </div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Recursos -->
-    <section id="recursos" class="section">
+    <!-- Resources -->
+    <section class="section-alt" id="resources">
       <div class="container">
-        <div class="section-header centered">
-          <h2 class="section-title">Recursos &amp; productos digitales</h2>
-          <p class="section-kicker">
-            Documentando procesos reales para futuros infoproductos
+        <header class="section-header centered">
+          <h2 class="section-title" data-i18n="resourcesTitle">Digital Resources</h2>
+          <p class="section-kicker" data-i18n="resourcesKicker">
+            Guías, plantillas y recursos prácticos para ayudarte a construir tu propio stack digital.
           </p>
-        </div>
+        </header>
 
         <div class="cards-grid">
-          <article class="card">
-            <h3 class="card-title">
-              Guía práctica: Dashboards operativos en Looker Studio
-            </h3>
-            <p class="card-meta">Estado: En desarrollo</p>
-            <p class="card-text">
-              Documento donde sistematizo el proceso real de diseño de dashboards
-              para operaciones de atención al cliente y medios de pago: desde
-              la limpieza en Sheets hasta la publicación en Looker Studio.
-            </p>
-            <ul class="tag-list">
-              <li class="tag">Looker Studio</li>
-              <li class="tag">Google Sheets</li>
-              <li class="tag">Operaciones</li>
-            </ul>
+          <article class="card resource-card">
+            <div class="resource-media">
+              <img
+                src="assets/resource-ebook.jpg"
+                alt="Ebook de análisis de datos abierto en una pantalla"
+              />
+              <span class="resource-pill" data-i18n="resourcePaidLabel">
+                Coming soon
+              </span>
+            </div>
+            <div class="resource-body">
+              <h3 class="card-title" data-i18n="resource1Title">
+                Guía práctica de análisis de datos para perfiles no técnicos
+              </h3>
+              <p class="card-text" data-i18n="resource1Body">
+                Ebook orientado a personas que vienen de operaciones, soporte o contenidos
+                y quieren empezar a medir mejor su trabajo usando datos.
+              </p>
+              <div class="tag-list">
+                <span class="tag">Data basics</span>
+                <span class="tag">Dashboards</span>
+                <span class="tag">Career</span>
+              </div>
+              <button class="btn btn-outline" type="button" disabled>
+                <span data-i18n="resource1Cta">Próximamente</span>
+              </button>
+            </div>
           </article>
 
-          <article class="card">
-            <h3 class="card-title">
-              Templates de portfolio para perfiles de datos y web
-            </h3>
-            <p class="card-meta">Estado: En diseño</p>
-            <p class="card-text">
-              Colección de plantillas enfocadas en analistas de datos, operaciones
-              y desarrolladores web, pensadas para publicar en GitHub Pages o
-              como productos en marketplaces de templates.
-            </p>
-            <ul class="tag-list">
-              <li class="tag">Templates web</li>
-              <li class="tag">GitHub Pages</li>
-              <li class="tag">Monetización</li>
-            </ul>
+          <article class="card resource-card">
+            <div class="resource-media">
+              <img
+                src="assets/resource-templates.jpg"
+                alt="Colección de interfaces y plantillas web en monitor"
+              />
+              <span class="resource-pill resource-pill-free" data-i18n="resourceFreeLabel">
+                Free
+              </span>
+            </div>
+            <div class="resource-body">
+              <h3 class="card-title" data-i18n="resource2Title">
+                Starter kit de plantillas web y dashboards
+              </h3>
+              <p class="card-text" data-i18n="resource2Body">
+                Pack de plantillas en HTML/CSS y Google Sheets para acelerar la creación
+                de portfolios, dashboards básicos y documentación de proyectos.
+              </p>
+              <div class="tag-list">
+                <span class="tag">HTML/CSS</span>
+                <span class="tag">Google Sheets</span>
+                <span class="tag">Notion</span>
+              </div>
+              <button class="btn btn-primary" type="button">
+                <span data-i18n="resource2Cta">Descargar desde GitHub</span>
+              </button>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Contacto -->
-    <section id="contacto" class="section section-alt">
-      <div class="container contact-grid">
-        <div>
-          <div class="section-header">
-            <h2 class="section-title">Contacto</h2>
-            <p class="section-kicker">¿Te interesa colaborar o contratar?</p>
-          </div>
-          <p>
-            Estoy abierto a oportunidades de trabajo remoto, proyectos freelance
-            y colaboración en productos digitales relacionados con operaciones,
-            datos y desarrollo web.
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <header class="section-header centered">
+          <h2 class="section-title" data-i18n="contactTitle">Let’s work together</h2>
+          <p class="section-kicker" data-i18n="contactKicker">
+            Si tenés un proyecto en mente o una idea en borrador, puedo ayudarte a darle forma.
           </p>
-          <p>
-            La mejor forma de contacto es por correo, pero también puedo adaptar
-            este portfolio para incluir otros canales según la necesidad del proyecto.
-          </p>
-        </div>
+        </header>
 
-        <div class="contact-card">
-          <h3 class="card-title">Escríbeme</h3>
-          <p class="card-text">
-            Envíame un mensaje con contexto del proyecto, tipo de rol y
-            horizonte temporal y podemos revisar si hay fit real.
-          </p>
-          <a href="mailto:tu-correo@ejemplo.com" class="btn btn-primary">
-            Enviar correo
-          </a>
-          <p class="contact-note">
-            * Reemplaza el correo por el que quieras usar en tu portfolio público.
-          </p>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 class="card-title" data-i18n="contactCardTitle">Información de contacto</h3>
+            <p class="card-text" data-i18n="contactCardBody">
+              Prefiero empezar con un mensaje corto donde me cuentes contexto, objetivos
+              y plazos. A partir de ahí, podemos coordinar una call.
+            </p>
+
+            <ul class="contact-link-list">
+              <li>
+                <span class="contact-label">Email</span>
+                <a
+                  class="contact-link"
+                  href="mailto:tu-email@example.com"
+                >
+                  tu-email@example.com
+                </a>
+              </li>
+              <li>
+                <span class="contact-label">LinkedIn</span>
+                <a
+                  class="contact-link"
+                  href="https://www.linkedin.com/in/tu-usuario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  linkedin.com/in/tu-usuario
+                </a>
+              </li>
+              <li>
+                <span class="contact-label">GitHub</span>
+                <a
+                  class="contact-link"
+                  href="https://github.com/tu-usuario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  github.com/tu-usuario
+                </a>
+              </li>
+            </ul>
+
+            <p class="contact-note" data-i18n="contactNote">
+              Tiempo de respuesta habitual: 24–48 h en días hábiles.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <h3 class="card-title" data-i18n="contactCtaTitle">Cómo empezar</h3>
+            <p class="card-text" data-i18n="contactCtaBody">
+              Podés escribirme un mensaje directo por LinkedIn o enviarme un email
+              con el tema, tipo de proyecto, alcance y plazos. Si ya tenés docs o
+              repos, mejor todavía.
+            </p>
+            <div class="contact-actions">
+              <a
+                href="mailto:tu-email@example.com?subject=Proyecto%20-%20Consulta"
+                class="btn btn-primary"
+                data-i18n="contactEmailCta"
+              >
+                Enviar email
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tu-usuario"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+                data-i18n="contactLinkedinCta"
+              >
+                Escribir por LinkedIn
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p class="footer-text">
-        © <span id="year"></span> Alejandro Matesa. Portfolio de operaciones, datos y web.
+        © <span id="footer-year"></span> Alejandro Matesa ·
+        <span data-i18n="footerText">Construyendo productos digitales, un proyecto a la vez.</span>
       </p>
     </div>
   </footer>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>
