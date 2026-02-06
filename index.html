@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es" data-theme="light">
+<html lang="es" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <title>Alejandro Matesa · Web · Data · Digital Products</title>
     <meta
       name="description"
-      content="Portfolio de Alejandro Matesa: diseño web, datos y productos digitales."
+      content="Portfolio de Alejandro Matesa: operaciones, análisis de datos y proyectos web pensados para trabajo remoto."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -16,417 +16,323 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <script defer src="script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lucide-static/font/lucide.css"
+    />
   </head>
 
   <body>
-    <!-- Scroll progress -->
-    <div id="scroll-progress" aria-hidden="true"></div>
+    <!-- Background particles -->
+    <canvas id="bg-particles" aria-hidden="true"></canvas>
 
-    <!-- Header -->
+    <!-- Header / Navigation -->
     <header class="site-header">
       <div class="container header-inner">
-        <a href="#hero" class="logo" aria-label="Alejandro Matesa home">
-          <span class="logo-text" data-i18n="brandName"></span>
+        <a href="#hero" class="brand" aria-label="Volver al inicio">
+          <span class="brand-icon" aria-hidden="true">
+            <i class="icon-chart-line"></i>
+          </span>
+          <span class="brand-text" data-i18n="brandName"></span>
         </a>
 
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-label="Abrir menú"
-        >
-          <span class="nav-toggle-bar"></span>
-          <span class="nav-toggle-bar"></span>
-        </button>
-
-        <nav class="main-nav">
-          <ul class="nav-menu">
+        <nav class="site-nav" aria-label="Navegación principal">
+          <ul class="nav-list">
             <li>
-              <a href="#projects" data-i18n="navProjects"></a>
+              <a href="#projects" class="nav-link" data-i18n="navProjects"></a>
             </li>
             <li>
-              <a href="#resources" data-i18n="navResources"></a>
+              <a href="#resources" class="nav-link" data-i18n="navResources"></a>
             </li>
             <li>
-              <a href="#about" data-i18n="navAbout"></a>
+              <a href="#about" class="nav-link" data-i18n="navAbout"></a>
             </li>
             <li>
-              <a href="#contact" data-i18n="navContact"></a>
+              <a href="#contact" class="nav-link" data-i18n="navContact"></a>
             </li>
           </ul>
         </nav>
 
         <div class="header-actions">
-          <div class="lang-switcher" aria-label="Language selector">
+          <div class="lang-switcher" aria-label="Selector de idioma">
             <button
-              class="lang-switch"
+              class="lang-btn lang-btn--active"
               type="button"
               data-lang="es"
-              aria-pressed="true"
             >
               ES
             </button>
-            <button
-              class="lang-switch"
-              type="button"
-              data-lang="en"
-              aria-pressed="false"
-            >
-              EN
-            </button>
+            <button class="lang-btn" type="button" data-lang="en">EN</button>
           </div>
 
           <button
             id="theme-toggle"
-            class="icon-pill icon-pill--theme"
+            class="icon-button"
             type="button"
             aria-label="Cambiar tema"
-            aria-pressed="false"
           >
-            ☀
+            <span class="icon-button-icon" aria-hidden="true">☾</span>
           </button>
 
-          <a
-            href="https://www.linkedin.com/in/alejandro-matesa"
-            target="_blank"
-            rel="noreferrer"
-            class="icon-pill icon-pill--linkedin"
-            aria-label="LinkedIn"
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
           >
-            in
-          </a>
-
-          <a
-            href="mailto:alejandromatesa@gmail.com"
-            class="icon-pill icon-pill--email"
-            aria-label="Enviar email"
-          >
-            @
-          </a>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </button>
         </div>
       </div>
     </header>
 
     <main>
       <!-- Hero -->
-      <section class="hero reveal" id="hero">
-        <canvas id="hero-particles" aria-hidden="true"></canvas>
-
-        <div class="container">
-          <div class="hero-inner hero-inner--center">
-            <div class="hero-icons-row">
-              <div class="hero-icon hero-icon--code">&lt;/&gt;</div>
-              <div class="hero-icon hero-icon--data">
-                <span class="hero-icon-bar"></span>
-                <span class="hero-icon-bar"></span>
-                <span class="hero-icon-bar"></span>
-              </div>
-              <div class="hero-icon hero-icon--creative">✒</div>
-            </div>
-
+      <section id="hero" class="section hero">
+        <div class="container hero-inner">
+          <div class="hero-content" data-reveal>
             <p class="hero-kicker" data-i18n="heroKicker"></p>
 
-            <h1 class="hero-title">
-              <span data-i18n="heroTitle"></span>
-            </h1>
+            <h1 class="hero-title" data-i18n="heroTitle"></h1>
 
             <p class="hero-subtitle" data-i18n="heroSubtitle"></p>
 
-            <p class="hero-text" data-i18n="heroBody"></p>
+            <p class="hero-body" data-i18n="heroBody"></p>
 
             <div class="hero-actions">
               <a
                 href="#projects"
-                class="btn btn-primary"
-                data-i18n="heroCtaPrimary"
+                class="btn btn--primary"
+                data-i18n="heroPrimaryCta"
               ></a>
               <a
                 href="#contact"
-                class="btn btn-outline"
-                data-i18n="heroCtaSecondary"
+                class="btn btn--ghost"
+                data-i18n="heroSecondaryCta"
               ></a>
             </div>
 
-            <div class="hero-meta">
-              <span class="pill" data-i18n="heroMeta1"></span>
-              <span class="pill" data-i18n="heroMeta2"></span>
+            <div class="hero-tags">
+              <span class="tag" data-i18n="heroTagRemote"></span>
+              <span class="tag" data-i18n="heroTagWebBI"></span>
+              <span class="tag" data-i18n="heroTagLearning"></span>
             </div>
+          </div>
+
+          <div class="hero-showcase" data-reveal>
+            <div class="hero-card hero-card--main">
+              <div class="hero-card-header">
+                <p class="hero-card-title" data-i18n="heroBadgeRole"></p>
+                <p class="hero-card-subtitle" data-i18n="heroBadgeFocus"></p>
+              </div>
+              <div class="hero-avatar-wrapper">
+                <img
+                  src="assets/images/hero/avatar-analytics.png"
+                  alt="Ilustración de dashboards y gráficos analíticos"
+                  class="hero-avatar"
+                  loading="lazy"
+                />
+              </div>
+              <dl class="hero-meta">
+                <div class="hero-meta-row">
+                  <dt data-i18n="heroMetaLocationLabel"></dt>
+                  <dd data-i18n="heroMetaLocationValue"></dd>
+                </div>
+                <div class="hero-meta-row">
+                  <dt data-i18n="heroMetaFocusLabel"></dt>
+                  <dd data-i18n="heroMetaFocusValue"></dd>
+                </div>
+                <div class="hero-meta-row">
+                  <dt data-i18n="heroMetaModeLabel"></dt>
+                  <dd data-i18n="heroMetaModeValue"></dd>
+                </div>
+              </dl>
+            </div>
+            
+            <div class="hero-floating-card hero-floating-card--top" data-reveal>
+              <p data-i18n="heroFloating1"></p>
+            </div>
+
+            <div
+              class="hero-floating-card hero-floating-card--bottom"
+              data-reveal
+            >
+              <p data-i18n="heroFloating2"></p>
+            </div>
+            
           </div>
         </div>
       </section>
 
       <!-- Projects -->
-      <section class="section section-alt reveal" id="projects">
+      <section id="projects" class="section section--padded">
         <div class="container">
-          <header class="section-header centered">
-            <h2 class="section-title" data-i18n="projectsTitle"></h2>
+          <header class="section-header" data-reveal>
             <p class="section-kicker" data-i18n="projectsKicker"></p>
+            <h2 class="section-title" data-i18n="projectsTitle"></h2>
+            <p class="section-subtitle" data-i18n="projectsSubtitle"></p>
           </header>
 
-          <div class="projects-filter">
-            <button
-              class="filter-button is-active"
-              data-filter="all"
-              type="button"
-              data-i18n="filterAll"
-            ></button>
-            <button
-              class="filter-button"
-              data-filter="web"
-              type="button"
-              data-i18n="filterWeb"
-            ></button>
-            <button
-              class="filter-button"
-              data-filter="data"
-              type="button"
-              data-i18n="filterData"
-            ></button>
-            <button
-              class="filter-button"
-              data-filter="automation"
-              type="button"
-              data-i18n="filterAutomation"
-            ></button>
-          </div>
-
-          <div class="cards-grid projects-grid">
-            <!-- Project 1 -->
-            <article class="card project-card" data-category="data">
-              <div class="project-media">
-                <img
-                  src="assets/images/projects/project-gamedev.webp"
-                  alt="Dashboard de práctica para negocio digital ficticio"
-                  class="project-image"
-                />
-              </div>
-              <div class="project-body">
-                <h3 class="card-title">Practice Analytics Dashboard</h3>
-                <p class="card-meta">Google Sheets · Looker Studio</p>
-                <p class="card-text" data-i18n="project1Body"></p>
-                <div class="tag-list">
-                  <span class="tag">KPI design</span>
-                  <span class="tag">Data viz</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="card project-card" data-category="web">
-              <div class="project-media">
-                <img
-                  src="assets/images/projects/project-products.webp"
-                  alt="Landing page para estudio creativo"
-                  class="project-image"
-                />
-              </div>
-              <div class="project-body">
-                <h3 class="card-title">Creative Studio Landing Page</h3>
-                <p class="card-meta">HTML · CSS · JavaScript</p>
-                <p class="card-text" data-i18n="project2Body"></p>
-                <div class="tag-list">
-                  <span class="tag">Semantic HTML</span>
-                  <span class="tag">Accessibility</span>
-                </div>
-              </div>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="card project-card" data-category="automation">
-              <div class="project-media">
-                <img
-                  src="assets/images/projects/project-web.webp"
-                  alt="Sistema sencillo de contenido y operaciones"
-                  class="project-image"
-                />
-              </div>
-              <div class="project-body">
-                <h3 class="card-title">Content & Ops System</h3>
-                <p class="card-meta">Notion · Python · Sheets</p>
-                <p class="card-text" data-i18n="project3Body"></p>
-                <div class="tag-list">
-                  <span class="tag">Automation</span>
-                  <span class="tag">Workflows</span>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Resources -->
-      <section class="section reveal" id="resources">
-        <div class="container">
-          <header class="section-header centered">
-            <h2 class="section-title" data-i18n="resourcesTitle"></h2>
-            <p class="section-kicker" data-i18n="resourcesKicker"></p>
-          </header>
-
-          <div class="cards-grid">
-            <article class="card resource-card">
-              <p class="pill pill-soft" data-i18n="resourcePaidLabel"></p>
-              <h3 class="card-title" data-i18n="resource1Title"></h3>
-              <p class="card-text" data-i18n="resource1Body"></p>
+          <div class="projects-controls" data-reveal>
+            <div class="projects-filters" role="tablist">
               <button
-                class="btn btn-muted"
+                class="pill projects-filter projects-filter--active"
                 type="button"
-                disabled
-                data-i18n="resource1Cta"
+                data-filter="all"
+                data-i18n="projectsFilterAll"
               ></button>
-            </article>
+              <button
+                class="pill projects-filter"
+                type="button"
+                data-filter="web"
+                data-i18n="projectsFilterWeb"
+              ></button>
+              <button
+                class="pill projects-filter"
+                type="button"
+                data-filter="data"
+                data-i18n="projectsFilterData"
+              ></button>
+              <button
+                class="pill projects-filter"
+                type="button"
+                data-filter="products"
+                data-i18n="projectsFilterProducts"
+              ></button>
+              <button
+                class="pill projects-filter"
+                type="button"
+                data-filter="other"
+                data-i18n="projectsFilterOther"
+              ></button>
+            </div>
+          </div>
 
-            <article class="card resource-card resource-card--highlight">
-              <p
-                class="pill pill-soft pill-soft--accent"
-                data-i18n="resourceFreeLabel"
-              ></p>
-              <h3 class="card-title" data-i18n="resource2Title"></h3>
-              <p class="card-text" data-i18n="resource2Body"></p>
-              <a
-                href="https://github.com/tu-usuario/tu-repo"
-                class="btn btn-primary"
-                target="_blank"
-                rel="noreferrer"
-                data-i18n="resource2Cta"
-              ></a>
-            </article>
+          <div
+            class="projects-scroller"
+            aria-live="polite"
+            aria-label="Proyectos filtrados"
+          >
+            <div id="projects-grid" class="projects-row"></div>
+          </div>
+
+          <div class="section-footer" data-reveal>
+            <a
+              href="https://github.com/amatesa"
+              target="_blank"
+              rel="noreferrer"
+              class="btn btn--outline"
+              data-i18n="projectsMoreCta"
+            ></a>
           </div>
         </div>
       </section>
 
-      <!-- About -->
-      <section class="section reveal" id="about">
+      <!-- Digital resources -->
+      <section id="resources" class="section section--padded">
         <div class="container">
-          <header class="section-header">
-            <h2 class="section-title" data-i18n="aboutTitle"></h2>
-            <p class="section-kicker" data-i18n="aboutKicker"></p>
+          <header class="section-header" data-reveal>
+            <p class="section-kicker" data-i18n="resourcesKicker"></p>
+            <h2 class="section-title" data-i18n="resourcesTitle"></h2>
+            <p class="section-subtitle" data-i18n="resourcesSubtitle"></p>
           </header>
 
-          <div class="two-column about-main">
-            <div class="about-text">
-              <p data-i18n="aboutBody1"></p>
-              <p data-i18n="aboutBody2"></p>
+          <div id="resources-grid" class="resources-grid"></div>
+        </div>
+      </section>
+
+<!-- About -->
+      <section id="about" class="section section--padded">
+        <div class="container about-grid">
+          <div class="about-text" data-reveal>
+            <p class="section-kicker" data-i18n="aboutKicker"></p>
+            <h2 class="section-title" data-i18n="aboutTitle"></h2>
+            <p class="section-subtitle" data-i18n="aboutSubtitle"></p>
+
+            <p class="about-paragraph" data-i18n="aboutBody1"></p>
+            <p class="about-paragraph" data-i18n="aboutBody2"></p>
+          </div>
+
+          <aside class="about-sidebar" data-reveal>
+            <div class="about-photo">
+              <div class="about-photo-inner">
+                <img
+                  src="assets/images/about/perfil.png"
+                  alt="Alejandro Matesa en un entorno de trabajo"
+                  loading="lazy"
+                />
+              </div>
             </div>
 
-            <aside class="about-photo-card">
-              <div class="about-photo-placeholder">Photo</div>
-              <p class="card-meta">
-                Portrait of Alejandro Matesa · Web · Data · Digital Products
-              </p>
-            </aside>
-          </div>
+            <div class="about-benefits">
+              <h3 class="about-list-title" data-i18n="aboutListTitle"></h3>
+              <ul class="about-list">
+                <li data-i18n="aboutList1"></li>
+                <li data-i18n="aboutList2"></li>
+                <li data-i18n="aboutList3"></li>
+                <li data-i18n="aboutList4"></li>
+              </ul>
 
-          <div class="about-highlights">
-            <article class="about-highlight">
-              <h3 data-i18n="aboutNowTitle"></h3>
-              <p data-i18n="aboutNowBody"></p>
-            </article>
-            <article class="about-highlight">
-              <h3 data-i18n="aboutHelpTitle"></h3>
-              <p data-i18n="aboutHelpBody"></p>
-            </article>
-            <article class="about-highlight">
-              <h3 data-i18n="aboutLearningTitle"></h3>
-              <p data-i18n="aboutLearningBody"></p>
-            </article>
-          </div>
+              <div class="about-tags">
+                <span class="tag tag--solid">Looker Studio</span>
+                <span class="tag tag--solid">Google Sheets</span>
+                <span class="tag tag--solid">HTML &amp; CSS</span>
+                <span class="tag tag--solid">WordPress</span>
+                <span class="tag tag--solid">Python &amp; automation</span>
+                <span class="tag tag--solid">AI workflows</span>
+              </div>
+            </div>
+          </aside>
         </div>
       </section>
 
       <!-- Contact -->
-      <section class="section section-alt reveal" id="contact">
-        <div class="container">
-          <header class="section-header centered">
-            <h2 class="section-title" data-i18n="contactTitle"></h2>
+      <section id="contact" class="section section--padded">
+        <div class="container contact-inner">
+          <div class="contact-text" data-reveal>
             <p class="section-kicker" data-i18n="contactKicker"></p>
-          </header>
+            <h2 class="section-title" data-i18n="contactTitle"></h2>
+            <p class="section-subtitle" data-i18n="contactSubtitle"></p>
 
-          <div class="two-column contact-grid">
-            <article class="card contact-card">
-              <h3 class="card-title" data-i18n="contactCardTitle"></h3>
-              <p class="card-text" data-i18n="contactCardBody"></p>
+            <div class="contact-actions">
+              <a
+                href="mailto:alejandromatesa@gmail.com"
+                class="btn btn--primary"
+                data-i18n="contactEmailCta"
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/alejandro-matesa"
+                target="_blank"
+                rel="noreferrer"
+                class="btn btn--outline"
+                data-i18n="contactLinkedinCta"
+              ></a>
+              <a
+                href="https://github.com/amatesa"
+                target="_blank"
+                rel="noreferrer"
+                class="btn btn--ghost"
+                data-i18n="contactGithubCta"
+              ></a>
+            </div>
 
-              <dl class="contact-list">
-                <div>
-                  <dt>EMAIL</dt>
-                  <dd>
-                    <a href="mailto:alejandromatesa@gmail.com"
-                      >alejandromatesa@gmail.com</a
-                    >
-                  </dd>
-                </div>
-                <div>
-                  <dt>LINKEDIN</dt>
-                  <dd>
-                    <a
-                      href="https://www.linkedin.com/in/alejandro-matesa"
-                      target="_blank"
-                      rel="noreferrer"
-                      >linkedin.com/in/alejandro-matesa</a
-                    >
-                  </dd>
-                </div>
-                <div>
-                  <dt>GITHUB</dt>
-                  <dd>
-                    <a
-                      href="https://github.com/amatesa"
-                      target="_blank"
-                      rel="noreferrer"
-                      >github.com/amatesa</a
-                    >
-                  </dd>
-                </div>
-              </dl>
-
-              <p class="contact-note" data-i18n="contactNote"></p>
-            </article>
-
-            <article class="card contact-card">
-              <h3 class="card-title" data-i18n="contactCtaTitle"></h3>
-              <p class="card-text" data-i18n="contactCtaBody"></p>
-
-              <div class="contact-actions">
-                <a
-                  href="mailto:tu-email@example.com"
-                  class="btn btn-primary"
-                  data-i18n="contactEmailCta"
-                ></a>
-                <a
-                  href="https://www.linkedin.com/in/tu-perfil"
-                  class="btn btn-outline"
-                  target="_blank"
-                  rel="noreferrer"
-                  data-i18n="contactLinkedinCta"
-                ></a>
-              </div>
-            </article>
+            <p class="contact-note" data-i18n="contactNote"></p>
           </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Simple footer -->
     <footer class="site-footer">
       <div class="container footer-inner">
-        <div class="footer-col">
-          <p class="footer-brand">Alejandro Matesa</p>
-          <p class="footer-text" data-i18n="footerText"></p>
-        </div>
-
-        <nav class="footer-nav" aria-label="Footer">
-          <a href="#projects" class="footer-link">Proyectos</a>
-          <a href="#resources" class="footer-link">Recursos</a>
-          <a href="#about" class="footer-link">Sobre mí</a>
-          <a href="#contact" class="footer-link">Contacto</a>
-        </nav>
-
-        <div class="footer-meta">
-          <span id="footer-year"></span>
-        </div>
+        <span class="footer-text" data-i18n="footerSignature"></span>
+        <span>&nbsp;·&nbsp;</span>
+        <span id="footer-year"></span>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
