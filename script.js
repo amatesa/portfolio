@@ -46,6 +46,19 @@ const projects = [
     repoUrl: "https://github.com/amatesa/landing-professional-template",
     demoUrl: "https://amatesa.github.io/landing-professional-template/",
   },
+  {
+  id: "ecommerce-sales-analytics",
+  titleKey: "project4Title",
+  bodyKey: "project4Body",
+  tagKey: "project4Tag",
+  image: "assets/images/projects/thumb-ecommerce-dashboard.webp",
+  imageAlt: "Dashboard de ventas e-commerce (Google Sheets + Looker Studio)",
+  tech: ["Google Sheets", "Looker Studio"],
+  notes: [""],
+  categories: ["data"],
+  repoUrl: "https://github.com/amatesa/ecommerce-sales-analytics-dashboard/",
+  demoUrl: "https://lookerstudio.google.com/reporting/bd828786-31f0-4be3-adac-1713c5c9f8e0"
+  },
 ];
 
 const resources = [
@@ -154,6 +167,10 @@ const translations = {
     project3Title: "Landing profesional reutilizable",
     project3Body:
       "Landing pensada como template adaptable para coaches, consultores y freelancers, optimizada para mensajes claros y llamadas a la acción visibles.",
+
+    project4Tag: "BI Dashboard",
+    project4Title: "E-commerce Sales Analytics Dashboard",
+    project4Body: "Dashboard de ventas e-commerce con KPIs y análisis por categoría, canal y periodo. Incluye preparación de datos en Google Sheets y visualización en Looker Studio con foco en insights accionables.",
 
     projectViewCase: "Ver detalles",
     projectViewLive: "Ver demo",
@@ -287,6 +304,10 @@ const translations = {
     project3Title: "Reusable professional landing",
     project3Body:
       "Landing page designed as a reusable template for coaches, consultants and freelancers, optimized for clear messaging and visible calls to action.",
+
+    project4Tag: "BI Dashboard",
+    project4Title: "E-commerce Sales Analytics Dashboard",
+    project4Body: "E-commerce sales dashboard with KPIs and breakdowns by category, channel and time period. Includes data preparation in Google Sheets and visualization in Looker Studio focused on actionable insights.",
 
     projectViewCase: "View details",
     projectViewLive: "View live demo",
