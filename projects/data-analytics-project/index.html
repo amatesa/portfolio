@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Caso de estudio de Data Analytics basado en ventas, clientes y marketing.">
+  <title>Data Analytics Case Study | Alejandro Matesa</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+</head>
+<body>
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="Inicio">
+      <span class="brand-mark">AM</span>
+      <span>Data Analytics</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir navegación" aria-expanded="false" data-nav-toggle>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="nav" data-nav>
+      <a href="#overview">Overview</a>
+      <a href="#method">Método</a>
+      <a href="#findings">Hallazgos</a>
+      <a href="#visuals">Visualizaciones</a>
+      <a href="#resources">Recursos</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Trabajo Práctico Integrador · Comisión C26109</p>
+        <h2>Análisis integral de datos de ventas, clientes y marketing para apoyar la toma de decisiones mediante técnicas de Data Analytics.</h2>
+        <p class="hero-copy">Proyecto desarrollado sobre tres conjuntos de datos correspondientes a ventas, clientes y campañas de marketing. El análisis recorre carga, limpieza, transformación, estadística descriptiva, visualización y dashboard interactivo en Python.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#findings">Ver resultados</a>
+          <a class="button secondary" href="https://colab.research.google.com/drive/1DJMsKAA0o6VCMi4UJGVq5q5zIccr_JZf?usp=drive_link">Abrir notebook</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-label="Indicadores principales">
+        <article>
+          <span>$1,467,093.52</span>
+          <p>Ingreso total después de limpiar duplicados y registros incompletos.</p>
+        </article>
+        <article>
+          <span>2,998</span>
+          <p>Ventas limpias disponibles para el análisis final.</p>
+        </article>
+        <article>
+          <span>$489.36</span>
+          <p>Venta promedio calculada sobre la variable venta_neta.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Project overview</p>
+        <h2>Un flujo completo desde datos crudos hasta indicadores ejecutivos.</h2>
+        <p>El objetivo del proyecto fue desarrollar un proceso completo de análisis de datos, desde recopilación y limpieza hasta visualizaciones e indicadores que ayuden a comprender el comportamiento de las ventas.</p>
+      </div>
+      <div class="overview-grid">
+        <article class="card reveal">
+          <span class="card-icon">01</span>
+          <h3>Problema de negocio</h3>
+          <p>El análisis buscó ordenar información comercial dispersa para identificar patrones de ventas, productos de mayor rendimiento, comportamiento mensual y relaciones entre precio, cantidad e ingreso.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon">02</span>
+          <h3>Objetivos</h3>
+          <p>Se aplicaron técnicas de estadística descriptiva, análisis exploratorio, correlaciones y consolidación de información para generar resultados útiles en la toma de decisiones.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card-icon">03</span>
+          <h3>Resultado final</h3>
+          <p>El proyecto integra análisis estadístico, visualizaciones y un dashboard interactivo que resume los principales indicadores del negocio.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section muted" id="method">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Metodología</p>
+        <h2>Flujo de trabajo.</h2>
+        <p>La metodología documentada en el notebook combina exploración inicial, limpieza, transformación, análisis estadístico y construcción de un dashboard para comunicar los principales indicadores.</p>
+      </div>
+      <div class="timeline">
+
+        <article class="timeline-item reveal">
+          <span>Recopilación</span>
+          <h3>Carga y validación de datos</h3>
+          <p>
+            Los conjuntos de datos se cargaron desde Google Drive en Google Colaboratory y se verificaron mediante un análisis exploratorio inicial, revisando dimensiones, tipos de datos, estadísticas descriptivas, valores nulos y registros duplicados.
+          </p>
+        </article>
+      
+        <article class="timeline-item reveal">
+          <span>Preparación</span>
+          <h3>Limpieza y transformación</h3>
+          <p>
+            El conjunto de ventas fue normalizado renombrando variables, convirtiendo el precio a formato numérico y la fecha al tipo datetime. Además, se eliminaron registros duplicados y filas con valores nulos para garantizar la calidad de los datos.
+          </p>
+        </article>
+      
+        <article class="timeline-item reveal">
+          <span>Análisis</span>
+          <h3>Análisis e integración</h3>
+          <p>
+            Se calculó la variable <strong>venta_neta</strong>, se realizaron agregaciones por producto y categoría y posteriormente se integraron los datos de ventas con las campañas de marketing para ampliar el análisis del negocio.
+          </p>
+        </article>
+      
+        <article class="timeline-item reveal">
+          <span>Visualización</span>
+          <h3>Estadística y visualización</h3>
+          <p>
+            Se desarrolló un análisis estadístico descriptivo acompañado de visualizaciones con Matplotlib, Seaborn y Plotly, finalizando con un dashboard interactivo que resume los principales indicadores del proyecto.
+          </p>
+        </article>
+      
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Datasets</p>
+        <h2>Tres fuentes con roles diferentes en el análisis.</h2>
+      </div>
+      <div class="dataset-grid">
+        <article class="dataset-card reveal">
+          <h3>Ventas</h3>
+          <dl>
+            <div><dt>Registros iniciales</dt><dd>3,035</dd></div>
+            <div><dt>Variables</dt><dd>7</dd></div>
+            <div><dt>Productos</dt><dd>30</dd></div>
+          </dl>
+          <p>Contiene productos, precios, cantidades, fechas, categorías y ventas calculadas. Presentó nulos, duplicados y campos que requerían conversión de tipo.</p>
+        </article>
+        <article class="dataset-card reveal">
+          <h3>Clientes</h3>
+          <dl>
+            <div><dt>Registros</dt><dd>567</dd></div>
+            <div><dt>Variables</dt><dd>5</dd></div>
+            <div><dt>Edad promedio</dt><dd>37.94</dd></div>
+          </dl>
+          <p>Incluye información demográfica y económica. No se detectaron nulos ni duplicados; Mar del Plata fue la ciudad con mayor frecuencia de registros.</p>
+        </article>
+        <article class="dataset-card reveal">
+          <h3>Marketing</h3>
+          <dl>
+            <div><dt>Registros</dt><dd>90</dd></div>
+            <div><dt>Canales</dt><dd>3</dd></div>
+            <div><dt>Costo promedio</dt><dd>4.93</dd></div>
+          </dl>
+          <p>Contiene campañas, productos, canal, costo y fechas. El dataset no tuvo nulos ni duplicados y cubre TV, RRSS y Email.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section dark-band" id="findings">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Key findings</p>
+        <h2>Los ingresos se explican mejor por volumen que por precio aislado.</h2>
+        <p>La matriz de correlación del notebook muestra una relación prácticamente nula entre precio_unitario y cantidad, mientras venta_neta se asocia con mayor fuerza a cantidad.</p>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi reveal"><span>0.77</span><p>Correlación entre cantidad y venta_neta.</p></article>
+        <article class="kpi reveal"><span>0.56</span><p>Correlación entre precio_unitario y venta_neta.</p></article>
+        <article class="kpi reveal"><span>-0.0024</span><p>Coeficiente Pearson entre precio_unitario y cantidad.</p></article>
+        <article class="kpi reveal"><span>Mayo</span><p>Mes con mayor venta mensual: $143,727.25.</p></article>
+      </div>
+      <div class="finding-list reveal">
+        <article>
+          <h3>Productos destacados</h3>
+          <p>El percentil 90 de ingresos por producto fue $60,902.87. Los productos por encima de ese umbral fueron Lámpara de mesa ($82,276.38), Auriculares ($74,175.58) y Microondas ($72,562.89).</p>
+        </article>
+        <article>
+          <h3>Categorías equilibradas</h3>
+          <p>Electrodomésticos lideró con $505,299.63, seguido por Electrónica con $482,577.80 y Decoración con $479,216.09. La diferencia entre categorías sugiere un portafolio sin dependencia excesiva de una única línea.</p>
+        </article>
+        <article>
+          <h3>Distribución de ventas</h3>
+          <p>La media de venta_neta fue $489.36 y la mediana $418.06. La media superior a la mediana confirma asimetría hacia valores altos, con una desviación estándar de $334.28.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Estadísticas</p>
+        <h2>Resumen cuantitativo de venta_neta.</h2>
+      </div>
+      <div class="stats-table reveal" role="region" aria-label="Resumen estadístico de venta neta">
+        <table>
+          <thead>
+            <tr>
+              <th>Medida</th>
+              <th>Valor</th>
+              <th>Lectura analítica</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Ingreso total</td><td>$1,467,093.52</td><td>Total calculado después de limpieza.</td></tr>
+            <tr><td>Media</td><td>$489.36</td><td>Promedio por operación limpia.</td></tr>
+            <tr><td>Mediana</td><td>$418.06</td><td>El 50% de las ventas queda por debajo de este valor.</td></tr>
+            <tr><td>Moda</td><td>$345.33 y $1,058.31</td><td>Distribución bimodal según el notebook.</td></tr>
+            <tr><td>Mínimo / máximo</td><td>$26.30 / $1,488.12</td><td>Rango amplio entre operaciones de bajo y alto importe.</td></tr>
+            <tr><td>Percentil 75</td><td>$709.92</td><td>La mayor parte de las ventas se concentra por debajo de $710.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section muted" id="visuals">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Visualizaciones</p>
+        <h2>Lecturas visuales generadas desde el análisis.</h2>
+        <p>Las imágenes corresponden a los gráficos exportados del notebook: distribución de ventas, top productos, evolución mensual, boxplot por categoría y matriz de correlación.</p>
+      </div>
+      <div class="visual-grid">
+        <figure class="visual-card large reveal">
+          <img src="assets/images/monthly-sales.png" alt="Evolución mensual de las ventas netas en 2024">
+          <figcaption>La serie mensual alcanza su mayor valor en mayo con $143,727.25 y cae a $108,480.17 en junio.</figcaption>
+        </figure>
+        <figure class="visual-card reveal">
+          <img src="assets/images/top-products.png" alt="Top 10 productos por ingresos">
+          <figcaption>Lámpara de mesa lidera el ranking de ingresos acumulados por producto.</figcaption>
+        </figure>
+        <figure class="visual-card reveal">
+          <img src="assets/images/sales-distribution.png" alt="Histograma de distribución de ventas netas">
+          <figcaption>La distribución concentra operaciones cerca de $400-$500, con cola hacia importes altos.</figcaption>
+        </figure>
+        <figure class="visual-card reveal">
+          <img src="assets/images/category-distribution.png" alt="Distribución de ventas netas por categoría">
+          <figcaption>Las categorías presentan medianas cercanas, dispersión comparable y algunos valores atípicos superiores.</figcaption>
+        </figure>
+        <figure class="visual-card reveal">
+          <img src="assets/images/correlation-matrix.png" alt="Matriz de correlación entre precio unitario, cantidad y venta neta">
+          <figcaption>La cantidad muestra mayor correlación con venta_neta que el precio_unitario.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="split">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Dashboard e insights</p>
+          <h2>Una vista ejecutiva para seguimiento mensual.</h2>
+          <p>El dashboard de Plotly reúne ingreso total, venta promedio, ventas mensuales, ingresos por categoría, relación precio-cantidad y top 10 productos. El notebook destaca que su interactividad permite explorar detalle mediante zoom, desplazamiento y hover.</p>
+        </div>
+        <div class="insight-panel reveal">
+          <h3>Recomendaciones documentadas</h3>
+          <ul>
+            <li>Continuar monitoreando mensualmente el desempeño de ventas mediante dashboards interactivos.</li>
+            <li>Analizar en mayor profundidad los productos con mayor ingreso para identificar factores de éxito.</li>
+            <li>Incorporar variables como descuentos, promociones o estacionalidad para ampliar futuros análisis.</li>
+            <li>Mantener procesos periódicos de validación y limpieza de datos antes de nuevos estudios.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark-band" id="tools">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Technologies used</p>
+        <h2>Herramientas aplicadas en el notebook.</h2>
+        <p>El análisis se desarrolló en Python con pandas y numpy para manipulación de datos, Matplotlib y Seaborn para visualizaciones estadísticas, y Plotly para el dashboard interactivo.</p>
+      </div>
+      <div class="kpi-grid">
+        <article class="kpi reveal"><span>pandas</span><p>Carga, limpieza, conversión de tipos, agregaciones e integración de datasets.</p></article>
+        <article class="kpi reveal"><span>numpy</span><p>Soporte para operaciones numéricas durante el análisis.</p></article>
+        <article class="kpi reveal"><span>Seaborn</span><p>Distribuciones, boxplots y matriz de correlación.</p></article>
+        <article class="kpi reveal"><span>Plotly</span><p>Dashboard interactivo con KPIs y visualizaciones de negocio.</p></article>
+      </div>
+    </section>
+
+    <section class="section muted" id="resources">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Recursos</p>
+        <h2>Materiales del proyecto.</h2>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card reveal" href="assets/Trabajo_Practico_Integrador_Data_Analytics.ipynb">
+          <span>Notebook</span>
+          <strong>Trabajo Práctico Integrador</strong>
+          <p>Archivo .ipynb usado como fuente de verdad para esta presentación.</p>
+        </a>
+        <a class="resource-card reveal" href="https://drive.google.com/file/d/1AeB7wVLe497ll3Uwjl4CFkTclzLQTC2U/view?usp=sharing">
+          <span>Google Drive</span>
+          <strong>ventas.csv</strong>
+          <p>Dataset de ventas enlazado en la carga del notebook.</p>
+        </a>
+        <a class="resource-card reveal" href="https://drive.google.com/file/d/1UZReEcqzvZxTojNexzj6G5eTqEKqeJpQ/view?usp=sharing">
+          <span>Google Drive</span>
+          <strong>clientes.csv</strong>
+          <p>Dataset de clientes utilizado para el análisis exploratorio inicial.</p>
+        </a>
+        <a class="resource-card reveal" href="https://drive.google.com/file/d/1aifz9UTt0kskzB4RzcOrUo2xQGXHzuDp/view?usp=sharing">
+          <span>Google Drive</span>
+          <strong>marketing.csv</strong>
+          <p>Dataset de campañas y canales de marketing integrado por producto.</p>
+        </a>
+        <a class="resource-card reveal" href=".">
+          <span>GitHub Pages</span>
+          <strong>Proyecto estático</strong>
+          <p>HTML, CSS, JavaScript y assets listos para publicar desde este directorio.</p>
+        </a>
+      </div>
+    </section>
+    
+    <section id="technologies" class="section">
+    
+      <div class="container">
+    
+        <div class="section-header reveal">
+    
+          <span class="section-tag">Herramientas</span>
+    
+          <h2>Tecnologías utilizadas</h2>
+    
+          <p>
+            Herramientas y bibliotecas empleadas durante el desarrollo del proyecto para la recopilación, preparación, análisis y visualización de los datos.
+          </p>
+    
+        </div>
+    
+        <div class="tech-grid">
+    
+          <div class="tech-card reveal">
+            <i class="devicon-python-plain colored"></i>
+            <h3>Python</h3>
+            <p>Lenguaje principal utilizado para el análisis de datos.</p>
+          </div>
+    
+          <div class="tech-card reveal">
+            <i class="devicon-pandas-original colored"></i>
+            <h3>Pandas</h3>
+            <p>Carga, limpieza, transformación y manipulación de datos.</p>
+          </div>
+    
+          <div class="tech-card reveal">
+            <i class="devicon-numpy-original colored"></i>
+            <h3>NumPy</h3>
+            <p>Operaciones numéricas y cálculos estadísticos.</p>
+          </div>
+    
+          <div class="tech-card reveal">
+            <i class="devicon-matplotlib-plain colored"></i>
+            <h3>Matplotlib</h3>
+            <p>Visualizaciones exploratorias y gráficos personalizados.</p>
+          </div>
+    
+          <div class="tech-card reveal">
+            <i class="devicon-plotly-plain colored"></i>
+            <h3>Plotly</h3>
+            <p>Construcción del dashboard interactivo del proyecto.</p>
+          </div>
+    
+          <div class="tech-card reveal">
+            <i class="devicon-googlecolab-plain colored"></i>
+            <h3>Google Colab</h3>
+            <p>Entorno de desarrollo y ejecución del notebook.</p>
+          </div>
+    
+          <div class="tech-card reveal">
+            <i class="devicon-google-plain colored"></i>
+            <h3>Google Drive</h3>
+            <p>Almacenamiento y gestión de los datasets y entregables.</p>
+          </div>
+    
+          <div class="tech-card reveal">
+            <i class="devicon-github-original colored"></i>
+            <h3>GitHub Pages</h3>
+            <p>Publicación del caso de estudio como sitio web.</p>
+          </div>
+    
+        </div>
+    
+      </div>
+    
+    </section>
+    <section class="section conclusion">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Conclusión</p>
+        <h2>La calidad de datos fue la base para convertir registros operativos en lectura de negocio.</h2>
+        <p>El proyecto recorrió preparación, limpieza, análisis y visualización de datos para generar indicadores confiables. Los resultados del notebook muestran un portafolio equilibrado por categoría, productos destacados claramente identificados y una relación más fuerte entre volumen vendido e ingreso que entre precio unitario y cantidad.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Data Analytics Case Study · Alejandro Matesa</p>
+    <a href="#top">Volver arriba</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

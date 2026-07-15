@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alejandro Matesa portfolio: systems thinking, data, operations, AI, automation and game development.">
+  <title>Alejandro Matesa | Systems, Data & Digital Products</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#thinking" data-i18n="skip">Skip to content</a>
+
+  <header class="site-shell" aria-label="Site identity">
+    <a class="site-logo" href="#hero" aria-label="Alejandro Matesa home">AM</a>
+    <p class="site-context" data-i18n="context">Argentina / Remote</p>
+  </header>
+
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-menu-toggle>
+    <span class="menu-toggle__line"></span>
+    <span class="menu-toggle__line"></span>
+    <span class="menu-toggle__line"></span>
+  </button>
+
+  <nav class="section-progress" aria-label="Section progress" data-progress>
+    <a class="section-progress__item is-active" href="#hero" data-progress-link="hero" aria-label="Start">
+      <span>01</span>
+      <strong data-i18n="navHero">Start</strong>
+    </a>
+    <a class="section-progress__item" href="#thinking" data-progress-link="thinking" aria-label="Thinking">
+      <span>02</span>
+      <strong data-i18n="navThinking">Thinking</strong>
+    </a>
+    <a class="section-progress__item" href="#method" data-progress-link="method" aria-label="Method">
+      <span>03</span>
+      <strong data-i18n="navMethod">Method</strong>
+    </a>
+    <a class="section-progress__item" href="#work" data-progress-link="work" aria-label="Work">
+      <span>04</span>
+      <strong data-i18n="navWork">Work</strong>
+    </a>
+    <a class="section-progress__item" href="#contact" data-progress-link="contact" aria-label="Contact">
+      <span>05</span>
+      <strong data-i18n="navContact">Contact</strong>
+    </a>
+  </nav>
+
+  <div class="menu-backdrop" id="site-menu" data-menu hidden>
+    <div class="menu-panel" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+      <div class="menu-panel__top">
+        <p id="menu-title" data-i18n="menuTitle">Navigation</p>
+        <div class="language-switch" aria-label="Language selector">
+          <button type="button" class="is-active" data-language="en" aria-pressed="true">EN</button>
+          <button type="button" data-language="es" aria-pressed="false">ES</button>
+        </div>
+      </div>
+
+      <div class="menu-panel__body">
+        <a href="#hero" data-menu-link data-i18n="navHero">Start</a>
+        <a href="#thinking" data-menu-link data-i18n="menuThinking">How I think</a>
+        <a href="#method" data-menu-link data-i18n="navMethod">Method</a>
+        <a href="#work" data-menu-link data-i18n="menuWork">Selected work</a>
+        <a href="#contact" data-menu-link data-i18n="navContact">Contact</a>
+      </div>
+
+      <div class="menu-panel__footer">
+        <a href="resume/resume-en.pdf" target="_blank" rel="noopener noreferrer" data-i18n="resume">Resume</a>
+        <a href="mailto:matesaalejandro@gmail.com">matesaalejandro@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section section--hero" id="hero" data-section data-hero>
+      <div class="hero__content" data-reveal>
+        <p class="eyebrow" data-i18n="heroEyebrow">Systems / Data / AI / Games</p>
+        <h1 data-i18n="heroTitle">Systems, made understandable.</h1>
+        <p class="hero__lead" data-i18n="heroLead">I work across data, operations, automation and game systems. The common thread is simple: understand the real problem, reduce noise and build something useful enough to keep improving.</p>
+        <dl class="hero__meta" aria-label="Professional focus">
+          <div>
+            <dt data-i18n="meta01Label">Current focus</dt>
+            <dd data-i18n="meta01Value">Data Analysis, AI Systems and Game Design</dd>
+          </div>
+          <div>
+            <dt data-i18n="meta02Label">Background</dt>
+            <dd data-i18n="meta02Value">Operations, BI and process improvement</dd>
+          </div>
+        </dl>
+        <div class="hero__actions">
+          <a class="button button--dark" href="#work" data-i18n="seeWork">See selected work</a>
+          <a class="button button--light" href="resume/resume-en.pdf" target="_blank" rel="noopener noreferrer" data-i18n="resume">Resume</a>
+        </div>
+      </div>
+
+      <figure class="hero__portrait" data-portrait data-reveal>
+        <img src="portrait/portrait-alt.png" alt="Portrait of Alejandro Matesa">
+      </figure>
+    </section>
+
+    <section class="section section--thinking" id="thinking" data-section>
+      <div class="section__intro" data-reveal>
+        <p class="eyebrow" data-i18n="thinkingEyebrow">How I think</p>
+        <h2 data-i18n="thinkingTitle">The tool matters less than the clarity it creates.</h2>
+      </div>
+
+      <div class="thinking-grid" data-reveal>
+        <div class="thinking-options" role="tablist" aria-label="Thinking principles">
+          <button class="text-option is-active" type="button" data-thinking="understand" role="tab" aria-selected="true" data-i18n="thinkingOption1">Understand before building</button>
+          <button class="text-option" type="button" data-thinking="improve" role="tab" aria-selected="false" data-i18n="thinkingOption2">Improve what repeats</button>
+          <button class="text-option" type="button" data-thinking="connect" role="tab" aria-selected="false" data-i18n="thinkingOption3">Connect different domains</button>
+        </div>
+        <article class="thinking-card" data-thinking-panel>
+          <p>I slow down enough to understand how a system works: the people, constraints, data and hidden friction. Once the shape is clear, the solution usually becomes simpler.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--method" id="method" data-section>
+      <div class="section__intro" data-reveal>
+        <p class="eyebrow" data-i18n="methodEyebrow">Method</p>
+        <h2 data-i18n="methodTitle">A practical loop for unfamiliar problems.</h2>
+      </div>
+
+      <div class="method-grid" data-reveal>
+        <div class="method-flow" role="tablist" aria-label="Method steps">
+          <button class="method-card is-active" type="button" data-method="observe" role="tab" aria-selected="true">
+            <strong data-i18n="methodStep1">Observe</strong>
+            <small data-i18n="methodHint1">Map the real situation</small>
+          </button>
+          <button class="method-card" type="button" data-method="structure" role="tab" aria-selected="false">
+            <strong data-i18n="methodStep2">Structure</strong>
+            <small data-i18n="methodHint2">Make the hidden pattern visible</small>
+          </button>
+          <button class="method-card" type="button" data-method="build" role="tab" aria-selected="false">
+            <strong data-i18n="methodStep3">Build</strong>
+            <small data-i18n="methodHint3">Create the smallest useful artifact</small>
+          </button>
+          <button class="method-card" type="button" data-method="improve" role="tab" aria-selected="false">
+            <strong data-i18n="methodStep4">Improve</strong>
+            <small data-i18n="methodHint4">Iterate from evidence</small>
+          </button>
+        </div>
+        <article class="method-panel" data-method-panel>
+          <h3>Observe the system before trying to fix it.</h3><br>
+          <p>I start by listening, mapping the workflow and looking for the points where information, people or decisions get stuck.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--work" id="work" data-section>
+      <div class="work-shell">
+        <div class="section__intro" data-reveal>
+          <p class="eyebrow" data-i18n="workEyebrow">Selected work</p>
+          <h2 data-i18n="workTitle">Projects as evidence of how I structure problems.</h2>
+        </div>
+
+        <div class="work-controls" data-reveal>
+          <label class="project-search">
+            <span data-i18n="projectSearchLabel">Search projects</span>
+            <input type="search" data-project-search placeholder="Search by project, tool or focus">
+          </label>
+          <div class="project-filters" aria-label="Project filters">
+            <button class="filter-chip is-active" type="button" data-filter="all" data-i18n="filterAll">All</button>
+            <button class="filter-chip" type="button" data-filter="game" data-i18n="filterGame">Games</button>
+            <button class="filter-chip" type="button" data-filter="data" data-i18n="filterData">Data</button>
+            <button class="filter-chip" type="button" data-filter="featured" data-i18n="filterFeatured">Featured</button>
+          </div>
+        </div>
+
+        <div class="project-tabs" role="tablist" aria-label="Project selector" data-project-list data-reveal>
+          <button class="project-tab is-active" type="button" data-project="woods" role="tab" aria-selected="true">Whispering Woods</button>
+          <button class="project-tab" type="button" data-project="roll" role="tab" aria-selected="false">Roll a Ball</button>
+          <button class="project-tab" type="button" data-project="silent" role="tab" aria-selected="false">Silent Escape</button>
+          <button class="project-tab" type="button" data-project="commerce" role="tab" aria-selected="false">BI Dashboard</button>
+          <button class="project-tab" type="button" data-project="analytics" role="tab" aria-selected="false">Data Analytics</button>
+        </div>
+
+        <article class="project-view" data-project-view data-reveal>
+          <div class="project-view__media" data-project-media>
+            <img src="projects/whispering-woods/cover.png" alt="Whispering Woods game menu screenshot">
+          </div>
+          <div class="project-view__copy">
+            <p class="project-type" data-project-type>Unity Game</p>
+            <h3 data-project-title>Whispering Woods</h3>
+            <p data-project-text>Academic Unity project developed as a complete playable experience to showcase modular architecture, gameplay programming, progression systems, AI, UI, interactive audio and narrative integration.</p>
+            <dl class="project-facts" data-project-facts>
+              <div><dt>Role</dt><dd>Lead Developer</dd></div>
+              <div><dt>Focus</dt><dd>Gameplay Architecture & Systems Design</dd></div>
+              <div><dt>Tools</dt><dd>Unity 6, C#</dd></div>
+            </dl>
+            <div class="project-links" data-project-links>
+              <!--<a href="https://github.com/amatesa/G-Whispering_Woods" aria-disabled="true">GitHub pending</a>-->
+              <a href="https://github.com/amatesa/G-Whispering_Woods/blob/main/README.md">Project README</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section--contact" id="contact" data-section>
+      <div class="contact-shell" data-reveal>
+        <p class="eyebrow" data-i18n="contactEyebrow">Contact</p>
+        <h2 data-i18n="contactTitle">Let’s talk about systems, products, data or games.</h2>
+        <p data-i18n="contactText">I am interested in opportunities where curiosity, adaptability, analytical thinking and continuous improvement matter as much as technical skills.</p>
+        <div class="contact-actions">
+          <a href="resume/resume-en.pdf" target="_blank" rel="noopener noreferrer" data-i18n="resume">Resume</a>
+          <a href="https://www.linkedin.com/in/alejandro-matesa" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/amatesa" target="_blank" rel="noopener noreferrer" >GitHub</a>
+          <a href="mailto:matesaalejandro@gmail.com?subject=Opportunity%20from%20your%20portfolio">Email</a>      
+          <a href="https://wa.me/541131908187?text=Hi%20Alejandro,%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener noreferrer" class="is-placeholder" data-i18n="whatsapp">WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
